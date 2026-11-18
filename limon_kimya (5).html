@@ -1,0 +1,3311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركة ليمون ميديكال | LIMON KIMYA VE ORGANIZASYON TIC. LTD. STI.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --primary-light: #ccfbf1;
+      --accent: #eab308;
+      --accent-dark: #ca8a04;
+      --accent-light: #fef9c3;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.07);
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
+
+    /* Header */
+    .topbar {
+      background: linear-gradient(135deg, #064e3b 0%, #0f766e 60%, #15803d 100%);
+      color: #fff;
+      padding: 12px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: 0 4px 18px rgba(6, 78, 59, 0.28);
+    }
+
+    .topbar-inner {
+      max-width: 1260px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .brand-logo-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: #ffffff;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+      flex-shrink: 0;
+    }
+
+    .brand-title h1 {
+      font-size: 1.12rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+
+    .brand-title .official-en {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #fde047;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-title p {
+      font-size: 0.76rem;
+      color: #d1fae5;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot.online { background: #4ade80; box-shadow: 0 0 8px #4ade80; }
+    .dot.offline { background: #facc15; box-shadow: 0 0 8px #facc15; }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      text-decoration: none;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-accent { background: var(--accent); color: #0f172a; }
+    .btn-accent:hover { background: var(--accent-dark); color: #fff; }
+    .btn-success { background: var(--success); color: #fff; }
+    .btn-success:hover { background: #15803d; }
+    .btn-warning { background: var(--warning); color: #fff; }
+    .btn-danger { background: var(--danger); color: #fff; }
+    .btn-outline {
+      background: #fff;
+      color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+    .btn-glass:hover { background: rgba(255, 255, 255, 0.26); }
+    .btn-sm { padding: 6px 11px; font-size: 0.8rem; border-radius: 8px; }
+
+    /* Search & Filter Panel */
+    .filter-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      margin-bottom: 18px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 11px 40px 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 11px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      background: #f8fafc;
+    }
+    [dir="ltr"] .search-input { padding: 11px 14px 11px 40px; }
+    .search-input:focus {
+      border-color: var(--primary);
+      background: #fff;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+    [dir="ltr"] .search-icon { right: auto; left: 13px; }
+
+    .chips-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .chips-scroll {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      scrollbar-width: thin;
+    }
+
+    .chip {
+      padding: 6px 13px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--primary); }
+    .chip.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .chip.type-chip.active {
+      background: #0f172a;
+      border-color: #0f172a;
+      color: #fde047;
+    }
+
+    /* Catalog Grid */
+    .catalog-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      gap: 14px;
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+    .product-card:hover {
+      border-color: #99f6e4;
+      box-shadow: var(--shadow);
+    }
+    .product-card.in-cart {
+      border-color: var(--primary);
+      background: #f0fdfa;
+    }
+
+    .badges-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge-brand {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 2px 9px;
+      border-radius: 7px;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .badge-type {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 7px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .product-name {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 6px;
+      direction: ltr;
+      text-align: right;
+    }
+    [dir="ltr"] .product-name { text-align: left; }
+
+    .product-code {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: monospace;
+      background: #f8fafc;
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .stepper {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 3px;
+    }
+
+    .step-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: none;
+      background: #f1f5f9;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-btn:hover { background: var(--primary); color: #fff; }
+
+    .qty-input {
+      width: 46px;
+      text-align: center;
+      border: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      background: transparent;
+      outline: none;
+    }
+
+    /* Floating Cart Bar */
+    .floating-cart {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 780px;
+      background: #0f172a;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+      z-index: 45;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .cart-summary-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cart-count-badge {
+      background: var(--accent);
+      color: #0f172a;
+      font-weight: 900;
+      font-size: 1rem;
+      min-width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8px;
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.62);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 60;
+      overflow-y: auto;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 22px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+    }
+
+    .close-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 13px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      outline: none;
+      background: #fff;
+    }
+    .form-control:focus { border-color: var(--primary); }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 560px) {
+      .form-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .cart-item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: #f8fafc;
+    }
+
+    /* Admin Portal Styles */
+    .admin-banner {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 720px) {
+      .links-grid { grid-template-columns: 1fr; }
+    }
+
+    .link-box {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+    .link-box.admin-box {
+      background: #fefce8;
+      border-color: #fde047;
+    }
+
+    .link-url-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .link-url-input {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-size: 0.8rem;
+      direction: ltr;
+      font-family: monospace;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 15px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card .stat-val {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+
+    .order-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--border);
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s;
+    }
+    .order-card.urgent { border-right: 6px solid var(--danger); }
+    .order-card.status-new { border-top: 3px solid #2563eb; }
+    .order-card.status-prep { border-top: 3px solid var(--warning); }
+    .order-card.status-done { border-top: 3px solid var(--success); opacity: 0.92; }
+
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: inline-block;
+    }
+    .pill-new { background: #dbeafe; color: #1d4ed8; }
+    .pill-prep { background: var(--warning-light); color: #b45309; }
+    .pill-done { background: var(--success-light); color: #15803d; }
+    .pill-urgent { background: var(--danger-light); color: var(--danger); }
+
+    .order-items-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      font-size: 0.88rem;
+    }
+
+    .order-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .code-box {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 12px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 0.76rem;
+      direction: ltr;
+      text-align: left;
+      max-height: 220px;
+      overflow: auto;
+      white-space: pre;
+      margin: 8px 0;
+    }
+
+    .alert-info {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .alert-warn {
+      background: #fefce8;
+      border: 1.5px solid #eab308;
+      color: #854d0e;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      margin-bottom: 14px;
+    }
+
+    /* New Order Incoming Banner */
+    .incoming-alert {
+      position: fixed;
+      top: 84px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #16a34a, #0f766e);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.4);
+      z-index: 110;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      border: 2px solid #bbf7d0;
+    }
+    .incoming-alert.show { display: flex; animation: slideDown 0.3s ease; }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 86px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      padding: 11px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 105;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #334155;
+    }
+    .toast.show { display: flex; animation: slideDown 0.25s ease; }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translate(-50%, -12px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" id="brandLogoTrigger" title="شركة ليمون ميديكال - LIMON KIMYA">
+        <div class="brand-logo-wrap">
+          <svg viewBox="0 0 220 220" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="globeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#22c55e" />
+                <stop offset="55%" stop-color="#15803d" />
+                <stop offset="100%" stop-color="#065f46" />
+              </linearGradient>
+              <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#a3e635" />
+                <stop offset="100%" stop-color="#16a34a" />
+              </linearGradient>
+              <linearGradient id="swooshGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#facc15" />
+                <stop offset="100%" stop-color="#eab308" />
+              </linearGradient>
+            </defs>
+            <path d="M108 54 C96 26, 62 22, 54 42 C72 52, 92 54, 108 54 Z" fill="url(#leafGrad)" />
+            <path d="M112 52 C126 20, 162 18, 170 40 C150 50, 130 52, 112 52 Z" fill="url(#leafGrad)" />
+            <circle cx="110" cy="122" r="66" fill="url(#globeGrad)" />
+            <ellipse cx="110" cy="122" rx="44" ry="64" fill="none" stroke="#86efac" stroke-width="3.5" opacity="0.7" />
+            <ellipse cx="110" cy="122" rx="20" ry="65" fill="none" stroke="#86efac" stroke-width="3.5" opacity="0.7" />
+            <path d="M46 104 Q110 120 174 104" fill="none" stroke="#86efac" stroke-width="3.5" opacity="0.75" />
+            <path d="M46 140 Q110 156 174 140" fill="none" stroke="#86efac" stroke-width="3.5" opacity="0.75" />
+            <path d="M26 146 C64 186, 166 176, 196 108 C172 162, 74 172, 34 138 Z" fill="url(#swooshGrad)" />
+          </svg>
+        </div>
+        <div class="brand-title">
+          <h1 id="brandMainTitle">شركة ليمون ميديكال</h1>
+          <div class="official-en">LIMON KIMYA VE ORGANIZASYON TIC. LTD. STI.</div>
+          <p id="portalSubtitle">بوابة طلبات المشغلات والكيتات المخبرية للزبائن والمخابر</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="status-pill" id="connectionBadge">
+          <span class="dot online" id="connDot"></span>
+          <span id="connText">متصل مباشرة بالشركة 🟢</span>
+        </div>
+
+        <button class="btn btn-glass btn-sm" id="langToggleBtn" onclick="toggleLanguage()">
+          🌐 English
+        </button>
+
+        <button class="btn btn-accent btn-sm hidden" id="backToCustomerBtn" onclick="switchToCustomer()">
+          🛒 واجهة الزبائن
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Incoming New Order Banner -->
+  <div id="incomingAlert" class="incoming-alert">
+    <span style="font-size:1.5rem;">🔔</span>
+    <div>
+      <div id="incomingAlertTitle">وصل طلب جديد الآن!</div>
+      <div id="incomingAlertBody" style="font-size:0.82rem; font-weight:600; opacity:0.95;"></div>
+    </div>
+    <button class="btn btn-sm" style="background:#fff; color:#065f46;" onclick="dismissIncomingAlert()">حسناً</button>
+  </div>
+
+  <!-- Toast Banner -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ========================================================= -->
+  <!-- 1. CUSTOMER PORTAL (100% PRIVATE - NO OTHER ORDERS SHOWN) -->
+  <!-- ========================================================= -->
+  <main id="customerView" class="container">
+    <div class="filter-card">
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="ابحث باسم التحليل أو الكيت (مثل: AFP, TSH, Vitamin D, Glucose) أو رقم الكود..."
+            oninput="renderCatalog()"
+          />
+        </div>
+        <button class="btn btn-outline" id="customItemBtn" onclick="openModal('customItemModal')">
+          ➕ طلب مادة غير موجودة بالقائمة
+        </button>
+      </div>
+
+      <span class="chips-label" id="brandFilterLabel">تصفية حسب الجهاز / الشركة المصنعة:</span>
+      <div class="chips-scroll" id="brandChips"></div>
+
+      <span class="chips-label" id="typeFilterLabel">تصفية حسب نوع المادة:</span>
+      <div class="chips-scroll" id="typeChips"></div>
+    </div>
+
+    <div class="catalog-meta">
+      <span id="catalogCountText">عرض الأصناف المتوفرة</span>
+      <button class="btn btn-outline btn-sm" id="resetFiltersBtn" onclick="resetFilters()">إعادة ضبط الفلاتر</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+
+    <!-- Floating Cart Bar -->
+    <div class="floating-cart" id="floatingCart">
+      <div class="cart-summary-info">
+        <div class="cart-count-badge" id="cartTotalQty">0</div>
+        <div>
+          <div style="font-weight:800; font-size:0.95rem;" id="cartSummaryTitle">سلة الطلبات فارغة</div>
+          <div style="font-size:0.78rem; color:#cbd5e1;" id="cartSummarySub">اختر الكيتات والمشغلات المطلوبة لإرسال طلبيتك</div>
+        </div>
+      </div>
+      <button class="btn btn-accent" id="reviewOrderBtn" onclick="openCheckoutModal()">
+        مراجعة وإرسال الطلب ⬅️
+      </button>
+    </div>
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 2. ADMIN PORTAL (#admin - PROTECTED BY PIN)               -->
+  <!-- ========================================================= -->
+  <section id="adminView" class="container hidden">
+    <!-- PIN Lock Screen -->
+    <div id="adminLockScreen" style="max-width:430px; margin:36px auto; background:#fff; padding:28px; border-radius:18px; box-shadow:var(--shadow); border:1px solid var(--border); text-align:center;">
+      <div style="font-size:2.5rem; margin-bottom:8px;">🛡️</div>
+      <h2 style="font-weight:900; margin-bottom:6px;">لوحة إدارة شركة ليمون ميديكال</h2>
+      <p style="color:var(--muted); font-size:0.86rem; margin-bottom:16px;">أدخل رمز المرور الخاص بالإدارة لمتابعة الطلبات الواردة من جميع الزبائن</p>
+      <input
+        type="password"
+        id="adminPinInput"
+        class="form-control"
+        placeholder="أدخل رمز المرور"
+        style="text-align:center; font-size:1.15rem; letter-spacing:4px; margin-bottom:12px;"
+        onkeydown="if(event.key==='Enter') unlockAdmin()"
+      />
+      <button class="btn btn-primary" style="width:100%;" onclick="unlockAdmin()">دخول لوحة الإدارة</button>
+      <div style="margin-top:12px;">
+        <button class="btn btn-outline btn-sm" onclick="switchToCustomer()">العودة لواجهة الزبائن</button>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard Content -->
+    <div id="adminDashboard" class="hidden">
+      <div class="admin-banner">
+        <div>
+          <h2 style="font-size:1.22rem; font-weight:900;">📊 غرفة متابعة طلبات الزبائن والمخابر</h2>
+          <p style="font-size:0.82rem; color:#cbd5e1;" id="lastSyncText">مزامنة سحابية تلقائية كل 8 ثوانٍ — تستقبل الطلبات من أي متصفح أو موبايل فوراً</p>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn btn-accent btn-sm" onclick="openModal('googleSyncModal')">
+            🔗 ربط Google Drive وتصدير Netlify
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="openSettingsModal()">
+            🔐 تغيير كلمة السر والإشعارات
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="openModal('addProductModal')">
+            ➕ إضافة صنف
+          </button>
+          <button class="btn btn-success btn-sm" onclick="syncOrdersFromCloud(true)">
+            🔄 تحديث الآن
+          </button>
+          <button class="btn btn-danger btn-sm" onclick="lockAdmin()">
+            🔒 قفل
+          </button>
+        </div>
+      </div>
+
+      <!-- Direct Copyable Links Box (Customer Link + Admin Link) -->
+      <div class="links-grid">
+        <div class="link-box">
+          <div style="font-weight:800; font-size:0.9rem; color:var(--primary);">🔗 1. رابط الزبائن والمخابر (للنشر على واتساب):</div>
+          <div style="font-size:0.78rem; color:var(--muted);">يفتح على الكتالوج وسلة الطلبات فقط — خصوصية 100% بدون أي طلبات أخرى.</div>
+          <div class="link-url-row">
+            <input type="text" id="customerLinkField" class="link-url-input" readonly />
+            <button class="btn btn-primary btn-sm" onclick="copyTextField('customerLinkField', 'تم نسخ رابط الزبائن بنجاح!')">📋 نسخ</button>
+            <button class="btn btn-outline btn-sm" onclick="copyEnglishLink()">🌐 EN</button>
+          </div>
+        </div>
+
+        <div class="link-box admin-box">
+          <div style="font-weight:800; font-size:0.9rem; color:#854d0e;">🛡️ 2. رابط إدارة الطلبات السري (خاص بك فقط):</div>
+          <div style="font-size:0.78rem; color:#713f12;">افتح هذا الرابط على موبايلك أو كمبيوترك لاستلام إشعارات الطلبات فوراً.</div>
+          <div class="link-url-row">
+            <input type="text" id="adminLinkField" class="link-url-input" readonly />
+            <button class="btn btn-accent btn-sm" onclick="copyTextField('adminLinkField', 'تم نسخ رابط الإدارة الخاص بك!')">📋 نسخ</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Warning if Cloud Sync URL is not yet linked -->
+      <div id="adminUnlinkedWarning" class="alert-warn hidden">
+        ⚠️ <strong>تنبيه هام:</strong> رابط Google Drive غير مضبوط حالياً. افتح <strong>«🔗 ربط Google Drive وتصدير Netlify»</strong> للتأكد من الرابط.
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div style="font-size:0.82rem; color:var(--muted); font-weight:700;">إجمالي الطلبات</div>
+          <div class="stat-val" id="statTotal">0</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:0.82rem; color:#1d4ed8; font-weight:700;">طلبات جديدة</div>
+          <div class="stat-val" style="color:#1d4ed8;" id="statNew">0</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:0.82rem; color:var(--warning); font-weight:700;">قيد التجهيز</div>
+          <div class="stat-val" style="color:var(--warning);" id="statPrep">0</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:0.82rem; color:var(--success); font-weight:700;">تمت المهمة ✅</div>
+          <div class="stat-val" style="color:var(--success);" id="statDone">0</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-size:0.82rem; color:var(--danger); font-weight:700;">طلبات مستعجلة 🔴</div>
+          <div class="stat-val" style="color:var(--danger);" id="statUrgent">0</div>
+        </div>
+      </div>
+
+      <!-- Orders Filter & Export Bar -->
+      <div class="filter-card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; gap:7px; flex-wrap:wrap;" id="orderStatusFilters">
+          <button class="chip active" onclick="setOrderFilter('ALL', this)">الكل</button>
+          <button class="chip" onclick="setOrderFilter('طلب جديد', this)">🆕 طلب جديد</button>
+          <button class="chip" onclick="setOrderFilter('قيد التجهيز', this)">⏳ قيد التجهيز</button>
+          <button class="chip" onclick="setOrderFilter('تمت المهمة ✅', this)">✅ تمت المهمة</button>
+          <button class="chip" onclick="setOrderFilter('URGENT', this)">🔴 مستعجل</button>
+        </div>
+
+        <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+          <input
+            type="text"
+            id="adminOrderSearch"
+            class="form-control"
+            style="width:220px; padding:7px 11px; font-size:0.85rem;"
+            placeholder="بحث برقم الطلب أو اسم المخبر..."
+            oninput="renderAdminOrders()"
+          />
+          <button class="btn btn-outline btn-sm" onclick="exportOrdersCSV()">
+            📥 تصدير CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Orders List -->
+      <div id="adminOrdersList"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- MODALS                                                    -->
+  <!-- ========================================================= -->
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="checkoutTitle">🛒 مراجعة وإرسال طلبية المواد</h3>
+        <button class="close-btn" onclick="closeModal('checkoutModal')">✕</button>
+      </div>
+
+      <div id="checkoutItemsList" style="max-height:230px; overflow-y:auto; margin-bottom:14px;"></div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label id="lblCustName">اسم المخبر أو الزبون *</label>
+          <input type="text" id="custName" class="form-control" placeholder="مثال: مخبر الشفاء التخصصي" />
+        </div>
+        <div class="form-group">
+          <label id="lblCustPhone">رقم الهاتف (واتساب) *</label>
+          <input type="tel" id="custPhone" class="form-control" placeholder="مثال: 05XXXXXXXX" />
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label id="lblCustArea">المنطقة / العنوان *</label>
+          <input type="text" id="custArea" class="form-control" placeholder="مثال: إسطنبول - الفاتح" />
+        </div>
+        <div class="form-group">
+          <label id="lblCustPriority">درجة الاستعجال</label>
+          <select id="custPriority" class="form-control">
+            <option value="اعتيادي">اعتيادي / Normal</option>
+            <option value="مستعجل 🔴">مستعجل 🔴 / Urgent</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="lblCustNotes">ملاحظات إضافية (اختياري)</label>
+        <input type="text" id="custNotes" class="form-control" placeholder="أي ملاحظات حول التوصيل أو رقم التشغيلة..." />
+      </div>
+
+      <button id="submitOrderBtn" class="btn btn-primary" style="width:100%; padding:13px; font-size:1rem;" onclick="submitOrder()">
+        ✅ تأكيد وإرسال الطلب الآن
+      </button>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div id="orderSuccessModal" class="modal-backdrop">
+    <div class="modal-box" style="text-align:center;">
+      <div style="font-size:3.2rem; margin-bottom:8px;">🎉</div>
+      <h3 id="successModalTitle" style="font-size:1.3rem; font-weight:900; color:var(--success); margin-bottom:6px;">تم إرسال طلبيتك بنجاح!</h3>
+      <p id="successModalDesc" style="color:var(--muted); font-size:0.9rem; margin-bottom:12px;">وصلت طلبيتك مباشرة إلى نظام شركة ليمون ميديكال وسيتم تجهيزها في أقرب وقت.</p>
+
+      <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:12px; padding:12px; margin-bottom:14px;">
+        <div id="successRefLabel" style="font-size:0.8rem; color:#166534;">رقم الطلب المرجعي:</div>
+        <div id="successOrderId" style="font-size:1.5rem; font-weight:900; color:#15803d; letter-spacing:1px;">LM-0000</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:10px;">
+        <button class="btn btn-primary" style="width:100%;" onclick="printLastCustomerOrderPDF()">
+          📄 تحميل وحفظ نسخة الطلب بصيغة PDF
+        </button>
+
+        <div id="successWhatsAppWrap" class="hidden">
+          <a id="successWhatsAppLink" href="#" target="_blank" class="btn btn-success" style="width:100%;">
+            📲 إرسال نسخة تأكيد سريعة عبر واتساب الشركة
+          </a>
+        </div>
+      </div>
+
+      <button class="btn btn-outline" style="width:100%;" onclick="closeModal('orderSuccessModal')">متابعة وإغلاق</button>
+    </div>
+  </div>
+
+  <!-- Custom Unlisted Item Modal -->
+  <div id="customItemModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:460px;">
+      <div class="modal-header">
+        <h3>➕ طلب مادة غير موجودة بالقائمة</h3>
+        <button class="close-btn" onclick="closeModal('customItemModal')">✕</button>
+      </div>
+      <div class="form-group">
+        <label>اسم المادة / التحليل أو رقم الكود *</label>
+        <input type="text" id="customItemName" class="form-control" placeholder="مثال: Cobas Elecsys Vitamin B12" />
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label>اسم الجهاز / الشركة</label>
+          <input type="text" id="customItemBrand" class="form-control" value="طلب خاص" />
+        </div>
+        <div class="form-group">
+          <label>العدد المطلوب *</label>
+          <input type="number" id="customItemQty" class="form-control" value="1" min="1" />
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;" onclick="addCustomItemToCart()">إضافة إلى السلة</button>
+    </div>
+  </div>
+
+  <!-- Google Drive / Sheets Sync & Netlify Builder Modal -->
+  <div id="googleSyncModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:720px;">
+      <div class="modal-header">
+        <h3>🔗 ربط Google Drive وتجهيز ملف Netlify النهائي</h3>
+        <button class="close-btn" onclick="closeModal('googleSyncModal')">✕</button>
+      </div>
+
+      <div class="alert-info">
+        <strong>تم تثبيت رابط Google Apps Script الخاص بك تلقائياً!</strong><br/>
+        • في حال ظهر خطأ عند اختبار الاتصال، تأكد داخل Google Apps Script من اختيار: <strong>Deploy → Manage deployments → Edit (القلم) → Version: New version → Who has access: Anyone</strong>.<br/>
+        • ثم اضغط الزر الأصفر بالأسفل لتحميل ملف <strong>index.html</strong> الجاهز لرفعه على Netlify.
+      </div>
+
+      <div class="form-group">
+        <label>1. رابط تطبيق الويب من Google Apps Script (ينتهي بـ /exec):</label>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <input
+            type="url"
+            id="scriptUrlInput"
+            class="form-control"
+            style="flex:1; direction:ltr;"
+            placeholder="https://script.google.com/macros/s/AKfycb.../exec"
+          />
+          <button class="btn btn-primary" onclick="saveAndTestScriptUrl()">حفظ واختبار الاتصال</button>
+        </div>
+      </div>
+
+      <div style="background:#f8fafc; border:1.5px solid var(--border); border-radius:12px; padding:14px; margin:14px 0;">
+        <div style="font-weight:800; margin-bottom:6px;">2. كود Google Apps Script المعتمد (يدعم الاستلام والتحديث والحذف):</div>
+        <button class="btn btn-outline btn-sm" onclick="copyAppsScriptCode()">📋 نسخ كود Google Apps Script</button>
+        <div class="code-box" id="appsScriptCodeBox"></div>
+        <div style="font-size:0.8rem; color:#475569;">
+          تأكد عند النشر في Google Apps Script من اختيار: <strong>Execute as: Me</strong> و <strong>Who has access: Anyone</strong>.
+        </div>
+      </div>
+
+      <div style="background:#fefce8; border:2px solid #eab308; border-radius:12px; padding:15px; text-align:center;">
+        <div style="font-weight:900; font-size:1rem; margin-bottom:6px;">3. تصدير الملف النهائي لرفعه على Netlify:</div>
+        <p style="font-size:0.84rem; color:#713f12; margin-bottom:10px;">
+          يُضمّن هذا الملف رابط Google Drive + كلمة السر الجديدة + الأصناف المضافة ليصل كل طلب من أي زبون إليك مباشرة:
+        </p>
+        <button class="btn btn-accent" style="width:100%; font-size:1rem; padding:12px;" onclick="downloadConfiguredHtml()">
+          ⬇️ تحميل ملف index.html المربوط وجاهز للرفع على Netlify
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security, Password & Notifications Settings Modal -->
+  <div id="notificationsModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:540px;">
+      <div class="modal-header">
+        <h3>🔐 تغيير كلمة السر وإعدادات الإشعارات</h3>
+        <button class="close-btn" onclick="closeModal('notificationsModal')">✕</button>
+      </div>
+
+      <div style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:12px; padding:14px; margin-bottom:14px;">
+        <div style="font-weight:800; color:#0f766e; margin-bottom:8px;">🔑 تغيير كلمة سر لوحة الإدارة:</div>
+        <div class="form-grid-2">
+          <div class="form-group" style="margin-bottom:0;">
+            <label>كلمة السر الجديدة *</label>
+            <input type="text" id="cfgAdminPin" class="form-control" placeholder="أدخل الرمز الجديد" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>تأكيد كلمة السر الجديدة *</label>
+            <input type="text" id="cfgAdminPinConfirm" class="form-control" placeholder="أعد كتابة الرمز الجديد" />
+          </div>
+        </div>
+        <small style="color:#115e59; display:block; margin-top:6px;">
+          ملاحظة: يتم حفظ كلمة السر الجديدة فوراً في متصفحك، ولنقلها إلى موقع Netlify اضغط بعدها «تحميل ملف index.html المربوط».
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>رقم واتساب شركة ليمون ميديكال (بصيغة دولية بدون +، مثال: 905XXXXXXXXX)</label>
+        <input type="text" id="cfgWhatsapp" class="form-control" style="direction:ltr;" placeholder="905XXXXXXXXX" />
+      </div>
+
+      <hr style="margin:14px 0; border:none; border-top:1px solid var(--border);" />
+      <div style="font-weight:800; font-size:0.9rem; margin-bottom:8px;">إشعارات تليجرام التلقائية على جوالك (اختياري):</div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label>Telegram Bot Token</label>
+          <input type="text" id="cfgTgToken" class="form-control" style="direction:ltr;" placeholder="123456:ABC-DEF..." />
+        </div>
+        <div class="form-group">
+          <label>Telegram Chat ID</label>
+          <input type="text" id="cfgTgChatId" class="form-control" style="direction:ltr;" placeholder="987654321" />
+        </div>
+      </div>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;">
+        <button class="btn btn-primary" style="flex:1;" onclick="saveNotificationSettings()">✅ حفظ كلمة السر والإعدادات</button>
+        <button class="btn btn-outline" onclick="requestBrowserNotifications()">🔔 تفعيل إشعارات المتصفح</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add New Product Modal -->
+  <div id="addProductModal" class="modal-backdrop">
+    <div class="modal-box" style="max-width:480px;">
+      <div class="modal-header">
+        <h3>➕ إضافة صنف جديد إلى كتالوج الشركة</h3>
+        <button class="close-btn" onclick="closeModal('addProductModal')">✕</button>
+      </div>
+      <div class="form-group">
+        <label>اسم المادة / الكيت *</label>
+        <input type="text" id="newProdName" class="form-control" placeholder="مثال: Elecsys Troponin T hs" />
+      </div>
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label>رقم الكود المرجعي *</label>
+          <input type="text" id="newProdCode" class="form-control" placeholder="مثال: 05092744190" />
+        </div>
+        <div class="form-group">
+          <label>الجهاز / الشركة المصنعة</label>
+          <select id="newProdBrand" class="form-control">
+            <option value="Roche">Roche</option>
+            <option value="Cobas C111">Cobas C111</option>
+            <option value="Cobas C 8000">Cobas C 8000</option>
+            <option value="C 503 Green Pack">C 503 Green Pack</option>
+            <option value="Beckman Access">Beckman Access</option>
+            <option value="Abbott Architect">Abbott Architect</option>
+            <option value="Siemens">Siemens</option>
+            <option value="Advia">Advia</option>
+            <option value="Sysmex">Sysmex</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>نوع المادة</label>
+        <select id="newProdType" class="form-control">
+          <option value="كيتات فحص">كيتات فحص</option>
+          <option value="معايرات CalSet">معايرات CalSet</option>
+          <option value="كونترول Control">كونترول Control</option>
+          <option value="محاليل ومستهلكات">محاليل ومستهلكات</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" style="width:100%;" onclick="addNewCatalogProduct()">إضافة الصنف للكتالوج</button>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // COMPLETE LEMON MEDICAL CATALOG (100% FROM ATTACHED INVENTORY SOURCE)
+    // =========================================================================
+    const DEFAULT_CATALOG = [
+      // Roche - COBAS 6000 / E 411 / ELECSYS 2010 / INTEGRA STOK
+      { id: "ro_1", brand: "Roche", type: "كيتات فحص", name: "Elecsys AFP", code: "9015060190" },
+      { id: "ro_2", brand: "Roche", type: "معايرات CalSet", name: "AFP CalSet II", code: "4487761190" },
+      { id: "ro_3", brand: "Roche", type: "كيتات فحص", name: "Elecsys CEA 100 test", code: "11731629322" },
+      { id: "ro_4", brand: "Roche", type: "معايرات CalSet", name: "CEA CalSet", code: "11731645322" },
+      { id: "ro_5", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ca 125 II", code: "11776223190" },
+      { id: "ro_6", brand: "Roche", type: "معايرات CalSet", name: "Ca 125 II CalSet II", code: "7030207190" },
+      { id: "ro_7", brand: "Roche", type: "كيتات فحص", name: "Elecsys CA 15-3 II", code: "3045838122" },
+      { id: "ro_8", brand: "Roche", type: "معايرات CalSet", name: "CA 15-3 II CalSet", code: "3045846122" },
+      { id: "ro_9", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ca 19-9", code: "11776193122" },
+      { id: "ro_10", brand: "Roche", type: "معايرات CalSet", name: "Ca 19-9 CalSet", code: "11776215122" },
+      { id: "ro_11", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ca 72-4", code: "9005692190" },
+      { id: "ro_12", brand: "Roche", type: "معايرات CalSet", name: "CalSet Ca 72-4", code: "11776274122" },
+      { id: "ro_13", brand: "Roche", type: "كيتات فحص", name: "Elecsys Total PSA 200 test", code: "8791716190" },
+      { id: "ro_14", brand: "Roche", type: "كيتات فحص", name: "Elecsys Total PSA", code: "8791686190" },
+      { id: "ro_15", brand: "Roche", type: "معايرات CalSet", name: "Total PSA CalSet II", code: "8838534190" },
+      { id: "ro_16", brand: "Roche", type: "كيتات فحص", name: "Elecsys Free PSA", code: "8828601190" },
+      { id: "ro_17", brand: "Roche", type: "معايرات CalSet", name: "Free PSA CalSet", code: "8851964190" },
+      { id: "ro_18", brand: "Roche", type: "كيتات فحص", name: "Elecsys CYFRA 21-1", code: "11820966122" },
+      { id: "ro_19", brand: "Roche", type: "معايرات CalSet", name: "Elecsys CYFRA 21-1 CalSet", code: "11820974322" },
+      { id: "ro_20", brand: "Roche", type: "كونترول Control", name: "PRECİCONTROL TUMOR MARKER", code: "11776452122" },
+      { id: "ro_21", brand: "Roche", type: "كيتات فحص", name: "IGF - 1", code: "7475896190" },
+      { id: "ro_22", brand: "Roche", type: "معايرات CalSet", name: "CalSet IGF-1", code: "7475969190" },
+      { id: "ro_23", brand: "Roche", type: "كيتات فحص", name: "Elecsys PAPP-A", code: "8860173190" },
+      { id: "ro_24", brand: "Roche", type: "معايرات CalSet", name: "PAPP-A Calset", code: "4854101200" },
+      { id: "ro_25", brand: "Roche", type: "كيتات فحص", name: "Elecsys HCG+B", code: "3271749190" },
+      { id: "ro_26", brand: "Roche", type: "معايرات CalSet", name: "HCG+B CalSet", code: "3302652190" },
+      { id: "ro_27", brand: "Roche", type: "كيتات فحص", name: "Elecsys Free hCG", code: "8860297190" },
+      { id: "ro_28", brand: "Roche", type: "معايرات CalSet", name: "Free BhCG CalSet", code: "4854080200" },
+      { id: "ro_29", brand: "Roche", type: "كيتات فحص", name: "Elecsys HE4", code: "5950929190" },
+      { id: "ro_30", brand: "Roche", type: "معايرات CalSet", name: "HE4 CalSet", code: "5950945190" },
+      { id: "ro_31", brand: "Roche", type: "كيتات فحص", name: "ELECSYS FSH", code: "8932352190" },
+      { id: "ro_32", brand: "Roche", type: "معايرات CalSet", name: "FSH CalSet II", code: "8932417190" },
+      { id: "ro_33", brand: "Roche", type: "كيتات فحص", name: "ELECSYS LH", code: "11732234122" },
+      { id: "ro_34", brand: "Roche", type: "معايرات CalSet", name: "LH CalSet II", code: "3561097190" },
+      { id: "ro_35", brand: "Roche", type: "كيتات فحص", name: "Elecsys Estradiol III", code: "6656021190" },
+      { id: "ro_36", brand: "Roche", type: "معايرات CalSet", name: "Estradiol III CalSet", code: "6656048190" },
+      { id: "ro_37", brand: "Roche", type: "كيتات فحص", name: "Elecsys Prolactin II", code: "3203093190" },
+      { id: "ro_38", brand: "Roche", type: "معايرات CalSet", name: "Prolactin II CalSet", code: "3277356190" },
+      { id: "ro_39", brand: "Roche", type: "كيتات فحص", name: "Elecsys Testosteron II", code: "8946353190" },
+      { id: "ro_40", brand: "Roche", type: "معايرات CalSet", name: "Testosteron II CalSet II", code: "5202230190" },
+      { id: "ro_41", brand: "Roche", type: "كيتات فحص", name: "Elecsys Progesterone III", code: "7092539190" },
+      { id: "ro_42", brand: "Roche", type: "معايرات CalSet", name: "Progestreron CalSet", code: "7092547190" },
+      { id: "ro_43", brand: "Roche", type: "كيتات فحص", name: "Elecsys DHEA-S", code: "3000087122" },
+      { id: "ro_44", brand: "Roche", type: "معايرات CalSet", name: "DHEA-S CalSet", code: "3000095122" },
+      { id: "ro_45", brand: "Roche", type: "محاليل ومستهلكات", name: "Diluent Universal", code: "3183971122" },
+      { id: "ro_46", brand: "Roche", type: "محاليل ومستهلكات", name: "Universal Diluent 2", code: "5192943190" },
+      { id: "ro_47", brand: "Roche", type: "محاليل ومستهلكات", name: "Diluent MultiAssay", code: "3609987190" },
+      { id: "ro_48", brand: "Roche", type: "كيتات فحص", name: "Elecsys FT3 III", code: "9005803190" },
+      { id: "ro_49", brand: "Roche", type: "معايرات CalSet", name: "Elecsys FT3 III calset", code: "9077871190" },
+      { id: "ro_50", brand: "Roche", type: "كيتات فحص", name: "Elecsys FT4 IV", code: "9043276190" },
+      { id: "ro_51", brand: "Roche", type: "معايرات CalSet", name: "Calset FT4 IV", code: "90432992190" },
+      { id: "ro_52", brand: "Roche", type: "كيتات فحص", name: "TSH", code: "8429324190" },
+      { id: "ro_53", brand: "Roche", type: "معايرات CalSet", name: "TSH CalSet", code: "8443459190" },
+      { id: "ro_54", brand: "Roche", type: "كيتات فحص", name: "Elecsys Total T3", code: "9007725190" },
+      { id: "ro_55", brand: "Roche", type: "معايرات CalSet", name: "T3 CalSet", code: "11731548122" },
+      { id: "ro_56", brand: "Roche", type: "كيتات فحص", name: "Elecsys T4", code: "9007741190" },
+      { id: "ro_57", brand: "Roche", type: "معايرات CalSet", name: "Total T4 Calset", code: "12017717122" },
+      { id: "ro_58", brand: "Roche", type: "كيتات فحص", name: "Anti-TPO", code: "6368590190" },
+      { id: "ro_59", brand: "Roche", type: "معايرات CalSet", name: "Anti-TPO CalSet", code: "6472931190" },
+      { id: "ro_60", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-TG", code: "9004998190" },
+      { id: "ro_61", brand: "Roche", type: "معايرات CalSet", name: "Anti-Tg CalSet", code: "6368603190" },
+      { id: "ro_62", brand: "Roche", type: "كيتات فحص", name: "Elecsys Tg", code: "8906556190" },
+      { id: "ro_63", brand: "Roche", type: "معايرات CalSet", name: "Tg CalSet", code: "6445900190" },
+      { id: "ro_64", brand: "Roche", type: "كونترول Control", name: "PreciControl ThyroAB", code: "5042666191" },
+      { id: "ro_65", brand: "Roche", type: "كيتات فحص", name: "PCT(X) Brahms (Roche) Elecsys cobas e 100", code: "9318712190" },
+      { id: "ro_66", brand: "Roche", type: "كيتات فحص", name: "ELECSYS PRO BNP(PBNPX)", code: "9315268190" },
+      { id: "ro_67", brand: "Roche", type: "معايرات CalSet", name: "ProBNP II CalSet", code: "9315292190" },
+      { id: "ro_68", brand: "Roche", type: "كيتات فحص", name: "Elecsys hGH", code: "5390125190" },
+      { id: "ro_69", brand: "Roche", type: "معايرات CalSet", name: "hGH CalSet", code: "5390133190" },
+      { id: "ro_70", brand: "Roche", type: "كيتات فحص", name: "Elecsys C-Peptide", code: "3184897190" },
+      { id: "ro_71", brand: "Roche", type: "معايرات CalSet", name: "C-Peptide CalSet", code: "3184919190" },
+      { id: "ro_72", brand: "Roche", type: "كيتات فحص", name: "ELECSYS ACTH", code: "8946710190" },
+      { id: "ro_73", brand: "Roche", type: "معايرات CalSet", name: "ACTH CalSet", code: "3255760190" },
+      { id: "ro_74", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti - CCP", code: "5031656190" },
+      { id: "ro_75", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti - CCP", code: "5031664190" },
+      { id: "ro_76", brand: "Roche", type: "كيتات فحص", name: "Elecsys Insulin", code: "12017547122" },
+      { id: "ro_77", brand: "Roche", type: "معايرات CalSet", name: "Insulin CalSet", code: "12017504122" },
+      { id: "ro_78", brand: "Roche", type: "كيتات فحص", name: "Elecsys Cortisol II", code: "6687733190" },
+      { id: "ro_79", brand: "Roche", type: "معايرات CalSet", name: "Cortisol II CalSet", code: "6687750190" },
+      { id: "ro_80", brand: "Roche", type: "كيتات فحص", name: "Elecsys IL-6", code: "9015604190" },
+      { id: "ro_81", brand: "Roche", type: "معايرات CalSet", name: "Elecsys IL-6 CalSet", code: "5109469190" },
+      { id: "ro_82", brand: "Roche", type: "كونترول Control", name: "PreciControl Multimarker", code: "5341787190" },
+      { id: "ro_83", brand: "Roche", type: "كيتات فحص", name: "Elecsys Digoxin", code: "11820796190" },
+      { id: "ro_84", brand: "Roche", type: "كيتات فحص", name: "Elecsys Cyclosporine", code: "5889014190" },
+      { id: "ro_85", brand: "Roche", type: "معايرات CalSet", name: "Elecsys Cyclosporine CalSet", code: "5889022190" },
+      { id: "ro_86", brand: "Roche", type: "كيتات فحص", name: "Elecsys B - Crosslaps/Serum", code: "9005773190" },
+      { id: "ro_87", brand: "Roche", type: "معايرات CalSet", name: "B - Crosslaps/Serum Calset", code: "11972316122" },
+      { id: "ro_88", brand: "Roche", type: "كيتات فحص", name: "Elecsys IgE II", code: "4827031190" },
+      { id: "ro_89", brand: "Roche", type: "معايرات CalSet", name: "IgE CalSet", code: "11930427122" },
+      { id: "ro_90", brand: "Roche", type: "كيتات فحص", name: "ANTİ-TSHR", code: "8496609190" },
+      { id: "ro_91", brand: "Roche", type: "معايرات CalSet", name: "ANTİ-TSHR CalSet", code: "8496641190" },
+      { id: "ro_92", brand: "Roche", type: "كيتات فحص", name: "AMH", code: "6331076190" },
+      { id: "ro_93", brand: "Roche", type: "كونترول Control", name: "PreciControl AMH plus", code: "7957211190" },
+      { id: "ro_94", brand: "Roche", type: "معايرات CalSet", name: "AMH CalSet", code: "9013326190" },
+      { id: "ro_95", brand: "Roche", type: "كونترول Control", name: "PreciControl AMH", code: "6709966190" },
+      { id: "ro_96", brand: "Roche", type: "كيتات فحص", name: "Elecsys NSE", code: "12133113122" },
+      { id: "ro_97", brand: "Roche", type: "معايرات CalSet", name: "Elecsys NSE CS", code: "12133121122" },
+      { id: "ro_98", brand: "Roche", type: "كيتات فحص", name: "Elecsys SHBG", code: "3052001190" },
+      { id: "ro_99", brand: "Roche", type: "معايرات CalSet", name: "SHBG CalSet", code: "3052028190" },
+      { id: "ro_100", brand: "Roche", type: "كيتات فحص", name: "Elecsys Syphilis", code: "6923348190" },
+      { id: "ro_101", brand: "Roche", type: "كونترول Control", name: "PreciControl Syphilis", code: "6923364190" },
+      { id: "ro_102", brand: "Roche", type: "كيتات فحص", name: "Parathormone (PTH)", code: "11972103122" },
+      { id: "ro_103", brand: "Roche", type: "معايرات CalSet", name: "CalSet PTH", code: "8243875190" },
+      { id: "ro_104", brand: "Roche", type: "كيتات فحص", name: "Elecsys HIV Combi PT 100 Test", code: "8924163190" },
+      { id: "ro_105", brand: "Roche", type: "كيتات فحص", name: "Elecsys HIV Combi PT 200 Test", code: "8924180190" },
+      { id: "ro_106", brand: "Roche", type: "كونترول Control", name: "PRECİCONTROL HIV", code: "6924107190" },
+      { id: "ro_107", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-HCV II - 100 Test", code: "8836981190" },
+      { id: "ro_108", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-HCV II - 200 Test", code: "8837031190" },
+      { id: "ro_109", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti-HCV", code: "3290379190" },
+      { id: "ro_110", brand: "Roche", type: "كيتات فحص", name: "Elecsys HBsAg II 100 test", code: "8814856190" },
+      { id: "ro_111", brand: "Roche", type: "كيتات فحص", name: "Elecsys HBsAg II - 200 Test", code: "8814864190" },
+      { id: "ro_112", brand: "Roche", type: "كونترول Control", name: "PRECİCONTROL HBSAG", code: "4687876190" },
+      { id: "ro_113", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-Hbs II - 100 Test", code: "8498598191" },
+      { id: "ro_114", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-Hbs II - 200 Test", code: "8498601190" },
+      { id: "ro_115", brand: "Roche", type: "كونترول Control", name: "PRECİCONTROL Anti - HBs", code: "11876317122" },
+      { id: "ro_116", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-HBc Ig M", code: "11820567122" },
+      { id: "ro_117", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti - HBc IgM", code: "11876333122" },
+      { id: "ro_118", brand: "Roche", type: "كيتات فحص", name: "Elecsys Anti-HBc II", code: "7374160190" },
+      { id: "ro_119", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti-HBc II", code: "4927931190" },
+      { id: "ro_120", brand: "Roche", type: "كيتات فحص", name: "ELECSYS ANTİ HBE", code: "11820613122" },
+      { id: "ro_121", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti - HBe", code: "11876384122" },
+      { id: "ro_122", brand: "Roche", type: "كيتات فحص", name: "ELECSYS HBE AG", code: "11820583122" },
+      { id: "ro_123", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ant - HAV II", code: "8086630190" },
+      { id: "ro_124", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ant - HAV IgM", code: "11820591122" },
+      { id: "ro_125", brand: "Roche", type: "كونترول Control", name: "PreciControl Anti-HAV IgM", code: "11876368122" },
+      { id: "ro_126", brand: "Roche", type: "كيتات فحص", name: "Toxo IgG Elecsys cobas e 100", code: "4618815190" },
+      { id: "ro_127", brand: "Roche", type: "كونترول Control", name: "PreciControl Toxo IgG", code: "4618823190" },
+      { id: "ro_128", brand: "Roche", type: "كيتات فحص", name: "Toxo IgM Elecsys cobas e 100", code: "4618858190" },
+      { id: "ro_129", brand: "Roche", type: "كونترول Control", name: "PreciControl Toxo IgM", code: "4618866190" },
+      { id: "ro_130", brand: "Roche", type: "كيتات فحص", name: "ELECSYS CMV IGG", code: "9118543190" },
+      { id: "ro_131", brand: "Roche", type: "كونترول Control", name: "PreciControl CMV IgG", code: "4784600190" },
+      { id: "ro_132", brand: "Roche", type: "كيتات فحص", name: "ELECSYS CMV IGM", code: "4784618190" },
+      { id: "ro_133", brand: "Roche", type: "كونترول Control", name: "PreciControl CMV IgM", code: "4784626190" },
+      { id: "ro_134", brand: "Roche", type: "كيتات فحص", name: "Rubella IgG Elecsys cobas e 100", code: "4618793190" },
+      { id: "ro_135", brand: "Roche", type: "كونترول Control", name: "PreciControl Rubella IgG", code: "4618807190" },
+      { id: "ro_136", brand: "Roche", type: "كيتات فحص", name: "Rubella IgM Elecsys cobas e 100", code: "4618831190" },
+      { id: "ro_137", brand: "Roche", type: "كونترول Control", name: "PreciControl Rubella IgM", code: "4618840190" },
+      { id: "ro_138", brand: "Roche", type: "كيتات فحص", name: "Folate G3 Elecsys cobas e 100 V2", code: "8324131190" },
+      { id: "ro_139", brand: "Roche", type: "معايرات CalSet", name: "Folate III CalSet", code: "7396473190" },
+      { id: "ro_140", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ferritin - 100 Test", code: "3737551190" },
+      { id: "ro_141", brand: "Roche", type: "كيتات فحص", name: "Elecsys Ferritin - 200 Test", code: "44491785190" },
+      { id: "ro_142", brand: "Roche", type: "معايرات CalSet", name: "Ferritin CalSet", code: "3737586190" },
+      { id: "ro_143", brand: "Roche", type: "كيتات فحص", name: "Vitamin B12 G2 Elecsys cobas e 100", code: "7212771190" },
+      { id: "ro_144", brand: "Roche", type: "معايرات CalSet", name: "Vitamin B12 II CalSet", code: "7212780190" },
+      { id: "ro_145", brand: "Roche", type: "كونترول Control", name: "PreciControl Varia", code: "5618860190" },
+      { id: "ro_146", brand: "Roche", type: "كيتات فحص", name: "Elecsys Vit D Total Gen. III", code: "9038078190" },
+      { id: "ro_147", brand: "Roche", type: "معايرات CalSet", name: "CalSet Vitamin D total III", code: "9038116190" },
+      { id: "ro_148", brand: "Roche", type: "كونترول Control", name: "PreciControl Vitamin D Total III", code: "9038124190" },
+      { id: "ro_149", brand: "Roche", type: "كيتات فحص", name: "Calcitonin Elecsys cobas e 100 V2", code: "9005668190" },
+      { id: "ro_150", brand: "Roche", type: "معايرات CalSet", name: "Calcitonin Calset", code: "9005684190" },
+      { id: "ro_151", brand: "Roche", type: "كيتات فحص", name: "N-MID Osteocalcin Elecsys cobas e 100", code: "12149133122" },
+      { id: "ro_152", brand: "Roche", type: "معايرات CalSet", name: "N-MID Osteocalcin CalSet", code: "11972111122" },
+      { id: "ro_153", brand: "Roche", type: "كيتات فحص", name: "TACROLİMUS Elecsys Cobas e 100", code: "58890557190" },
+      { id: "ro_154", brand: "Roche", type: "معايرات CalSet", name: "TACROLİMUS CalSet", code: "5889065190" },
+      { id: "ro_155", brand: "Roche", type: "محاليل ومستهلكات", name: "ISD Sample Pretreatment", code: "5889073190" },
+      { id: "ro_156", brand: "Roche", type: "كيتات فحص", name: "Elecsys Myoglobin Cobas E", code: "12178214122" },
+      { id: "ro_157", brand: "Roche", type: "معايرات CalSet", name: "Elecsys Myoglobin CalSet", code: "12178222122" },
+      { id: "ro_158", brand: "Roche", type: "كيتات فحص", name: "Elecsys CK-MB", code: "5894808190" },
+      { id: "ro_159", brand: "Roche", type: "معايرات CalSet", name: "CK-MB CalSet", code: "5957664190" },
+      { id: "ro_160", brand: "Roche", type: "كيتات فحص", name: "Elecsys CK-MB STAT", code: "5957648190" },
+      { id: "ro_161", brand: "Roche", type: "معايرات CalSet", name: "CK-MB STAT CalSet", code: "5957565190" },
+      { id: "ro_162", brand: "Roche", type: "كيتات فحص", name: "ELECSYS TROP THS(X) NEW VERSİON", code: "9315322190" },
+      { id: "ro_163", brand: "Roche", type: "معايرات CalSet", name: "TROPONİN THS CALSET", code: "9315363190" },
+      { id: "ro_164", brand: "Roche", type: "كيتات فحص", name: "Elecsys Troponin T hs STAT", code: "9315349190" },
+      { id: "ro_165", brand: "Roche", type: "معايرات CalSet", name: "Elecsys Troponin T hs STAT CalSet", code: "5092736190" },
+      { id: "ro_166", brand: "Roche", type: "كيتات فحص", name: "Elecsys Troponin I", code: "5094810190" },
+      { id: "ro_167", brand: "Roche", type: "كيتات فحص", name: "Elecsys Troponin I STAT", code: "5094798190" },
+      { id: "ro_168", brand: "Roche", type: "معايرات CalSet", name: "Troponin I STAT CalSet", code: "5094801190" },
+      { id: "ro_169", brand: "Roche", type: "كونترول Control", name: "PreciControl Cardiac II", code: "4917049190" },
+      { id: "ro_170", brand: "Roche", type: "كونترول Control", name: "PreciControl Troponin", code: "5095107190" },
+      { id: "ro_171", brand: "Roche", type: "كيتات فحص", name: "ASLOT", code: "4489403190" },
+      { id: "ro_172", brand: "Roche", type: "كيتات فحص", name: "ASO Cobas Integra", code: "20750948322" },
+      { id: "ro_173", brand: "Roche", type: "كيتات فحص", name: "CRP4 İntegra/Cobas C", code: "7876033190" },
+      { id: "ro_174", brand: "Roche", type: "كيتات فحص", name: "RF - II", code: "20764574322" },
+      { id: "ro_175", brand: "Roche", type: "كونترول Control", name: "RF CONTROL SET", code: "3005496122" },
+      { id: "ro_176", brand: "Roche", type: "معايرات CalSet", name: "Preciset RF", code: "12172828322" },
+      { id: "ro_177", brand: "Roche", type: "كيتات فحص", name: "A1C-3 Tina-quant Hemoglobin A1c Gen3", code: "5336163190" },
+      { id: "ro_178", brand: "Roche", type: "محاليل ومستهلكات", name: "A1CD2 Hemolyzing Reagent Gen2", code: "4528182190" },
+      { id: "ro_179", brand: "Roche", type: "محاليل ومستهلكات", name: "Hemolyzing Reagent Gen.2 - Integra", code: "4528328190" },
+      { id: "ro_180", brand: "Roche", type: "معايرات CalSet", name: "C.F.A.S. HBA1C 3x2 mL", code: "4528417190" },
+      { id: "ro_181", brand: "Roche", type: "كونترول Control", name: "PreciControl HbA1c norm", code: "5479207190" },
+      { id: "ro_182", brand: "Roche", type: "كونترول Control", name: "PreciControl HbA1c path", code: "5912504190" },
+      { id: "ro_183", brand: "Roche", type: "كيتات فحص", name: "TRSF2 (Transferrin ver.2)", code: "3015050122" },
+      { id: "ro_184", brand: "Roche", type: "كيتات فحص", name: "ZINCO (ÇİNKO)", code: "RC2272" },
+      { id: "ro_185", brand: "Roche", type: "كيتات فحص", name: "COPPER (BAKIR)", code: "RCC200" },
+      { id: "ro_186", brand: "Roche", type: "كيتات فحص", name: "IGA2 , Cobas C system", code: "3507343190" },
+      { id: "ro_187", brand: "Roche", type: "كيتات فحص", name: "IGG2 ,100 Tests,cobas İntegra C311 / C501 / C502", code: "3507432190" },
+      { id: "ro_188", brand: "Roche", type: "كيتات فحص", name: "IGGT Integra", code: "20766631322" },
+      { id: "ro_189", brand: "Roche", type: "كيتات فحص", name: "IGM 2,150 Tests,cobas C systems", code: "3507190190" },
+      { id: "ro_190", brand: "Roche", type: "كيتات فحص", name: "IGM ,100 Tests, Integra", code: "20737771322" },
+      { id: "ro_191", brand: "Roche", type: "كيتات فحص", name: "LACT Gen.2 100 Test, Cobas C, İntegra", code: "3183700190" },
+      { id: "ro_192", brand: "Roche", type: "كيتات فحص", name: "NH3L", code: "20766682322" },
+      { id: "ro_193", brand: "Roche", type: "كيتات فحص", name: "CO2-L GEN.2 Cobas,INTEGRA 250 TEST", code: "3289923190" },
+      { id: "ro_194", brand: "Roche", type: "كيتات فحص", name: "ETOH2 , 100T, cobas Integra", code: "3183777190" },
+      { id: "ro_195", brand: "Roche", type: "معايرات CalSet", name: "NH3/ETH/CO2 Calibrator", code: "20751995190" },
+      { id: "ro_196", brand: "Roche", type: "كونترول Control", name: "NH3/ETH/CO2 Control A", code: "20753009190" },
+      { id: "ro_197", brand: "Roche", type: "كونترول Control", name: "NH3/ETH/CO2 Control N", code: "20752401190" },
+      { id: "ro_198", brand: "Roche", type: "كيتات فحص", name: "C4-2 Complement C4", code: "3001962322" },
+      { id: "ro_199", brand: "Roche", type: "كيتات فحص", name: "C3-2 Complement C3", code: "3001938322" },
+      { id: "ro_200", brand: "Roche", type: "كيتات فحص", name: "CHE GEN 200 TEST, COBAS İNTEGRA", code: "4498577090" },
+      { id: "ro_201", brand: "Roche", type: "كيتات فحص", name: "PREA ( Prealbumin)", code: "20764655322" },
+      { id: "ro_202", brand: "Roche", type: "كيتات فحص", name: "HCYS- Homocysteine Enzymatic Assay", code: "5385415190" },
+      { id: "ro_203", brand: "Roche", type: "كونترول Control", name: "Homosystein Control Kit", code: "5142423190" },
+      { id: "ro_204", brand: "Roche", type: "معايرات CalSet", name: "Homocysteine Calibrator Kit", code: "5385504190" },
+      { id: "ro_205", brand: "Roche", type: "كيتات فحص", name: "CRPHS-Cardiac C-reactive", code: "4628918190" },
+      { id: "ro_206", brand: "Roche", type: "معايرات CalSet", name: "Serum Proteins T Standart", code: "20737267322" },
+      { id: "ro_207", brand: "Roche", type: "كيتات فحص", name: "FERR Ferritin Cobas/Cobas C", code: "4885317190" },
+      { id: "ro_208", brand: "Roche", type: "كيتات فحص", name: "THC2, 200T, Cobas C", code: "4491009190" },
+      { id: "ro_209", brand: "Roche", type: "كيتات فحص", name: "Kappa TQ Gen.2, 100 Tests, Cobas C/Integra", code: "6749976190" },
+      { id: "ro_210", brand: "Roche", type: "كيتات فحص", name: "Lamb TQ Gen.2,100 Tests,CobasC/Integra", code: "6749992190" },
+      { id: "ro_211", brand: "Roche", type: "معايرات CalSet", name: "Precimat Fructosamine", code: "11098993122" },
+      { id: "ro_212", brand: "Roche", type: "كيتات فحص", name: "Acet2 acetaminophen gen2", code: "6769942190" },
+      { id: "ro_213", brand: "Roche", type: "كيتات فحص", name: "Digoxin kaset 250 test", code: "20737836322" },
+      { id: "ro_214", brand: "Roche", type: "كيتات فحص", name: "FRA , 150 Test, Cobas C,Integra", code: "4537939190" },
+      { id: "ro_215", brand: "Roche", type: "كيتات فحص", name: "VALP2, Cobas C Systems", code: "5108438190" },
+      { id: "ro_216", brand: "Roche", type: "كيتات فحص", name: "ApoBT apolipoprotein B 100 test", code: "3032574122" },
+      { id: "ro_217", brand: "Roche", type: "كيتات فحص", name: "ApoAT apolipoprotein A 100 test", code: "3032566122" },
+      { id: "ro_218", brand: "Roche", type: "كيتات فحص", name: "LI, C Systems", code: "4679598190" },
+      { id: "ro_219", brand: "Roche", type: "كيتات فحص", name: "PHNO2 - Phenobarbital", code: "4490924190" },
+      { id: "ro_220", brand: "Roche", type: "كيتات فحص", name: "PCP - Phencyclidine Pluss", code: "4490908190" },
+      { id: "ro_221", brand: "Roche", type: "كيتات فحص", name: "PHNY2 - Phenytoin", code: "4490932190" },
+      { id: "ro_222", brand: "Roche", type: "كيتات فحص", name: "AAT2 - Alfa 1 Antitrypsin", code: "3005771322" },
+      { id: "ro_223", brand: "Roche", type: "كيتات فحص", name: "CARB4, Cobas C systems - 100 Test", code: "7258062190" },
+      { id: "ro_224", brand: "Roche", type: "كيتات فحص", name: "AT - Antithrombin III - Integra, Cobas C system", code: "3036081122" },
+      { id: "ro_225", brand: "Roche", type: "كيتات فحص", name: "HAPT2 - Integra, Cobas C system", code: "3005593322" },
+      { id: "ro_226", brand: "Roche", type: "كيتات فحص", name: "CERU - Integra, Cobas C system", code: "20764663322" },
+      { id: "ro_227", brand: "Roche", type: "كيتات فحص", name: "B2MG Tina-Quant B2 Microglobulin", code: "8047430190" },
+      { id: "ro_228", brand: "Roche", type: "كونترول Control", name: "Control Set B2-Microglobuline", code: "8362785190" },
+      { id: "ro_229", brand: "Roche", type: "كيتات فحص", name: "LPA2 - Tina-Quant Lipoprotein (a) Gen. 2", code: "5852625190" },
+      { id: "ro_230", brand: "Roche", type: "معايرات CalSet", name: "preciset LPA2 - Lipoprotein (a) Gen. 2", code: "5852641190" },
+      { id: "ro_231", brand: "Roche", type: "كيتات فحص", name: "TP2 Total Protein Gen.2", code: "3183734190" },
+      { id: "ro_232", brand: "Roche", type: "كيتات فحص", name: "TPUC3", code: "3333825190" },
+      { id: "ro_233", brand: "Roche", type: "كيتات فحص", name: "ALBT2", code: "4469658190" },
+      { id: "ro_234", brand: "Roche", type: "كيتات فحص", name: "ALB2 Albumin Gen2", code: "3183688122" },
+      { id: "ro_235", brand: "Roche", type: "كيتات فحص", name: "Ureal/BUN", code: "4460715190" },
+      { id: "ro_236", brand: "Roche", type: "كيتات فحص", name: "Uric Acid ver.2", code: "3183807190" },
+      { id: "ro_237", brand: "Roche", type: "كيتات فحص", name: "CREAJ2 Creatinine Jaffé Gen.2", code: "4810716190" },
+      { id: "ro_238", brand: "Roche", type: "كيتات فحص", name: "CREP Gen 2, 250 Test, cobas c, İntegra", code: "3263991190" },
+      { id: "ro_239", brand: "Roche", type: "كيتات فحص", name: "LDLC3 LDL - Cholesterol Gen.3", code: "7005717190" },
+      { id: "ro_240", brand: "Roche", type: "كيتات فحص", name: "HDLC4 Cobas Integra / Cobas C", code: "7528566190" },
+      { id: "ro_241", brand: "Roche", type: "كيتات فحص", name: "LDHI2 IFCC Ver.2", code: "3004732122" },
+      { id: "ro_242", brand: "Roche", type: "كيتات فحص", name: "D-DI2 D-Dimer Gen.2", code: "4912551190" },
+      { id: "ro_243", brand: "Roche", type: "معايرات CalSet", name: "D-DİMER CALİBRATOR SET", code: "5050901190" },
+      { id: "ro_244", brand: "Roche", type: "كونترول Control", name: "D-DİMER CONTROL", code: "5050936190" },
+      { id: "ro_245", brand: "Roche", type: "كيتات فحص", name: "BILT3", code: "5795397190" },
+      { id: "ro_246", brand: "Roche", type: "كيتات فحص", name: "BILD2 Bilirubin Direct Gen.2", code: "5589061190" },
+      { id: "ro_247", brand: "Roche", type: "كيتات فحص", name: "GLUC3", code: "4404483190" },
+      { id: "ro_248", brand: "Roche", type: "كيتات فحص", name: "Cholesterol Gen.2", code: "3039773190" },
+      { id: "ro_249", brand: "Roche", type: "كيتات فحص", name: "TRIGL Triglycerides", code: "20767107322" },
+      { id: "ro_250", brand: "Roche", type: "كيتات فحص", name: "ASTL", code: "20764949322" },
+      { id: "ro_251", brand: "Roche", type: "كيتات فحص", name: "ALTL", code: "20764957322" },
+      { id: "ro_252", brand: "Roche", type: "كيتات فحص", name: "CK (Creatine Kinase)", code: "7190794190" },
+      { id: "ro_253", brand: "Roche", type: "كيتات فحص", name: "CKMB (Creatinine Kinase MB)", code: "7190808190" },
+      { id: "ro_254", brand: "Roche", type: "معايرات CalSet", name: "C.f.a.s. CK-MB", code: "11447394216" },
+      { id: "ro_255", brand: "Roche", type: "كيتات فحص", name: "ALP2L Alkaline Phosphatase IFCC", code: "3333701190" },
+      { id: "ro_256", brand: "Roche", type: "كيتات فحص", name: "GGT (g-Glutamyltransferase ver.2)", code: "3002721122" },
+      { id: "ro_257", brand: "Roche", type: "كيتات فحص", name: "Amilaz Pankreatik", code: "20766623322" },
+      { id: "ro_258", brand: "Roche", type: "كيتات فحص", name: "Amylase AMYL", code: "3183742122" },
+      { id: "ro_259", brand: "Roche", type: "كيتات فحص", name: "LIPC", code: "3029590322" },
+      { id: "ro_260", brand: "Roche", type: "كيتات فحص", name: "UIBC", code: "4536355190" },
+      { id: "ro_261", brand: "Roche", type: "كيتات فحص", name: "Iron Gen.3 100 Test", code: "3183696122" },
+      { id: "ro_262", brand: "Roche", type: "معايرات CalSet", name: "Iron - Fe Standart", code: "12146401216" },
+      { id: "ro_263", brand: "Roche", type: "كيتات فحص", name: "CA2 Calcium Gen.2", code: "5061482190" },
+      { id: "ro_264", brand: "Roche", type: "كيتات فحص", name: "Magnesium - Mg", code: "6481647190" },
+      { id: "ro_265", brand: "Roche", type: "كيتات فحص", name: "PHOS2", code: "3183793122" },
+      { id: "ro_266", brand: "Roche", type: "محاليل ومستهلكات", name: "NaCl", code: "20756350322" },
+      { id: "ro_267", brand: "Roche", type: "محاليل ومستهلكات", name: "NaCl %9", code: "4489357190" },
+      { id: "ro_268", brand: "Roche", type: "معايرات CalSet", name: "C.F.A.S. LİPİDS 3X1 mL.", code: "12172623122" },
+      { id: "ro_269", brand: "Roche", type: "معايرات CalSet", name: "C.f.a.s.", code: "10759350190" },
+      { id: "ro_270", brand: "Roche", type: "معايرات CalSet", name: "C.f.a.s. Proteins", code: "11355279216" },
+      { id: "ro_271", brand: "Roche", type: "معايرات CalSet", name: "C.F.A.S. PAC", code: "3555941190" },
+      { id: "ro_272", brand: "Roche", type: "معايرات CalSet", name: "C.f.a.s. PUC", code: "3121305122" },
+      { id: "ro_273", brand: "Roche", type: "كونترول Control", name: "Precinorm PUC", code: "3121313122" },
+      { id: "ro_274", brand: "Roche", type: "كونترول Control", name: "Precipath PUC", code: "3121291122" },
+      { id: "ro_275", brand: "Roche", type: "كونترول Control", name: "PreciControl Universal", code: "11731416190" },
+      { id: "ro_276", brand: "Roche", type: "كونترول Control", name: "PreciControl ClinChem Multi 1 20 X 5 mL", code: "5117003190" },
+      { id: "ro_277", brand: "Roche", type: "كونترول Control", name: "PreciControl ClinChem Multi 2 20 X 5 mL", code: "5117216190" },
+      { id: "ro_278", brand: "Roche", type: "كونترول Control", name: "PreciControl ClinChem Multi 1 4 X 5 mL", code: "5947626190" },
+      { id: "ro_279", brand: "Roche", type: "كونترول Control", name: "PreciControl ClinChem Multi 2 4 X 5 mL", code: "5947774190" },
+      { id: "ro_280", brand: "Roche", type: "كونترول Control", name: "TDM Control Set", code: "4521536190" },
+      { id: "ro_281", brand: "Roche", type: "كونترول Control", name: "PreciChorom I/II", code: "11012002122" },
+      { id: "ro_282", brand: "Roche", type: "معايرات CalSet", name: "Precimat Chromogen", code: "11012045122" },
+      { id: "ro_283", brand: "Roche", type: "معايرات CalSet", name: "Preciset TDM I", code: "3375790190" },
+      { id: "ro_284", brand: "Roche", type: "محاليل ومستهلكات", name: "Accelerator I 100ml", code: "20721867322" },
+      { id: "ro_285", brand: "Roche", type: "محاليل ومستهلكات", name: "ControlSet Vials", code: "3142949122" },
+      { id: "ro_286", brand: "Roche", type: "محاليل ومستهلكات", name: "CalSet Vials", code: "11776576322" },
+      { id: "ro_287", brand: "Roche", type: "محاليل ومستهلكات", name: "REF Electrode", code: "ARH59" },
+      { id: "ro_288", brand: "Roche", type: "محاليل ومستهلكات", name: "Na Electrode", code: "BCM07" },
+      { id: "ro_289", brand: "Roche", type: "محاليل ومستهلكات", name: "Cl Electrode", code: "BCS08" },
+      { id: "ro_290", brand: "Roche", type: "محاليل ومستهلكات", name: "K Electrode", code: "BDX66" },
+      { id: "ro_291", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Cleaning Solution / SysClean", code: "11298500316" },
+      { id: "ro_292", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Solution 1", code: "20738050122" },
+      { id: "ro_293", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Solution 2", code: "20738069122" },
+      { id: "ro_294", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Solution 3", code: "20738077122" },
+      { id: "ro_295", brand: "Roche", type: "معايرات CalSet", name: "ISE Calibrator Direct", code: "20763055122" },
+      { id: "ro_296", brand: "Roche", type: "معايرات CalSet", name: "ISE Calibrator Indirect/Urine", code: "20763063122" },
+      { id: "ro_297", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Referance Electrolyte Cobas Integra", code: "20738085122" },
+      { id: "ro_298", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Referance Electrolyte Cobas C System", code: "11360981216" },
+      { id: "ro_299", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Etcher", code: "20763098122" },
+      { id: "ro_300", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Deproteinizer", code: "20763071122" },
+      { id: "ro_301", brand: "Roche", type: "محاليل ومستهلكات", name: "SMS", code: "4489225190" },
+      { id: "ro_302", brand: "Roche", type: "محاليل ومستهلكات", name: "SCCS Special Cleaning Solution", code: "4880994190" },
+      { id: "ro_303", brand: "Roche", type: "كيتات فحص", name: "THC2 ONLINE DAT Cannabinoids", code: "4491009190" },
+      { id: "ro_304", brand: "Roche", type: "محاليل ومستهلكات", name: "Elecsys SysWash", code: "11930346122" },
+      { id: "ro_305", brand: "Roche", type: "محاليل ومستهلكات", name: "CLEAN Cleaner Casette", code: "20764337322" },
+      { id: "ro_306", brand: "Roche", type: "محاليل ومستهلكات", name: "MULTI (Single use reagent carrier)", code: "4593138190" },
+      { id: "ro_307", brand: "Roche", type: "محاليل ومستهلكات", name: "Cleaner 1 LT", code: "20754765322" },
+      { id: "ro_308", brand: "Roche", type: "محاليل ومستهلكات", name: "Magazin / Assay cup/tip", code: "12102137001" },
+      { id: "ro_309", brand: "Roche", type: "محاليل ومستهلكات", name: "Clean Liner", code: "11800507001" },
+      { id: "ro_310", brand: "Roche", type: "محاليل ومستهلكات", name: "Elecsys Moduler Wasteliner-M", code: "3023150001" },
+      { id: "ro_311", brand: "Roche", type: "محاليل ومستهلكات", name: "Assay Cup", code: "11706802001" },
+      { id: "ro_312", brand: "Roche", type: "محاليل ومستهلكات", name: "Assay Tip", code: "11706799001" },
+      { id: "ro_313", brand: "Roche", type: "محاليل ومستهلكات", name: "Activator Cobas Integra", code: "4663632190" },
+      { id: "ro_314", brand: "Roche", type: "محاليل ومستهلكات", name: "Activator Bottle Set", code: "4745086190" },
+      { id: "ro_315", brand: "Roche", type: "محاليل ومستهلكات", name: "TUBE FOR PINCH", code: "3731596001" },
+      { id: "ro_316", brand: "Roche", type: "محاليل ومستهلكات", name: "SI2 Cobas Integra/Cobas C", code: "4489365190" },
+      { id: "ro_317", brand: "Roche", type: "محاليل ومستهلكات", name: "NAOHD - İntegra", code: "4489241190" },
+      { id: "ro_318", brand: "Roche", type: "محاليل ومستهلكات", name: "ECO - D", code: "6544410190" },
+      { id: "ro_319", brand: "Roche", type: "محاليل ومستهلكات", name: "ECO - D Eco Tergent C 311", code: "5422485190" },
+      { id: "ro_320", brand: "Roche", type: "محاليل ومستهلكات", name: "Procell M", code: "4880340190" },
+      { id: "ro_321", brand: "Roche", type: "محاليل ومستهلكات", name: "CleanCell M", code: "4880293190" },
+      { id: "ro_322", brand: "Roche", type: "محاليل ومستهلكات", name: "ProCell Elecsys,cobas e", code: "11662988122" },
+      { id: "ro_323", brand: "Roche", type: "محاليل ومستهلكات", name: "CleanCell Elecsys,cobas e", code: "11662970122" },
+      { id: "ro_324", brand: "Roche", type: "محاليل ومستهلكات", name: "Cell Wash Solution/NAOH - D", code: "4880285190" },
+      { id: "ro_325", brand: "Roche", type: "محاليل ومستهلكات", name: "Cell Wash Solution/Acid Wash", code: "4880307190" },
+      { id: "ro_326", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Diluent Gen 2 2*2 Lt", code: "4880480190" },
+      { id: "ro_327", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Diluent Gen 2 5*300 ml", code: "4522630190" },
+      { id: "ro_328", brand: "Roche", type: "محاليل ومستهلكات", name: "ISE Internal Standard Gen 2 Cobas C Systems", code: "4522320190" },
+      { id: "ro_329", brand: "Roche", type: "معايرات CalSet", name: "ISE Standard Low", code: "11183974216" },
+      { id: "ro_330", brand: "Roche", type: "معايرات CalSet", name: "ISE Standard High", code: "11183982216" },
+      { id: "ro_331", brand: "Roche", type: "محاليل ومستهلكات", name: "PreClean M", code: "3004899190" },
+      { id: "ro_332", brand: "Roche", type: "محاليل ومستهلكات", name: "ProbeWash M", code: "3005712190" },
+      { id: "ro_333", brand: "Roche", type: "محاليل ومستهلكات", name: "Sample Cleaner 1", code: "4708725190" },
+      { id: "ro_334", brand: "Roche", type: "محاليل ومستهلكات", name: "Sample Cleaner 2", code: "5958024190" },
+      { id: "ro_335", brand: "Roche", type: "محاليل ومستهلكات", name: "PC/CC CUP 12 ASSY (12 PCS/SET)", code: "768-0856" },
+      { id: "ro_336", brand: "Roche", type: "محاليل ومستهلكات", name: "INTERNAL STANDART INSERT - ISE C311-C501", code: "5979854190" },
+      { id: "ro_337", brand: "Roche", type: "محاليل ومستهلكات", name: "Cobas E 411 Analyzer (Rack System)", code: "4775201001" },
+      { id: "ro_338", brand: "Roche", type: "محاليل ومستهلكات", name: "COBAS INTEGRA 400 Plus Analyzer", code: "3245233001" },
+      { id: "ro_339", brand: "Roche", type: "محاليل ومستهلكات", name: "Cobas 6000 Core Unit", code: "4745868001" },
+      { id: "ro_340", brand: "Roche", type: "محاليل ومستهلكات", name: "Solenoid 24 VDC 19 W 4.1N", code: "28159351001" },
+      { id: "ro_341", brand: "Roche", type: "محاليل ومستهلكات", name: "Circuit Board Assy LLD-P5", code: "9530711001" },
+      { id: "ro_342", brand: "Roche", type: "محاليل ومستهلكات", name: "Tubing Set ISE Integra 400", code: "28144672001" },
+      { id: "ro_343", brand: "Roche", type: "محاليل ومستهلكات", name: "Kit Maintanence I400/400Plus", code: "5670713001" },
+      { id: "ro_344", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB Analyzer Module", code: "29402062001" },
+      { id: "ro_345", brand: "Roche", type: "محاليل ومستهلكات", name: "Lamp Halogen 12V 50W - C311/501", code: "P/N727-0536" },
+      { id: "ro_346", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB ASSY EMOT110", code: "271-3901" },
+      { id: "ro_347", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB RT-CPU 68360", code: "28184933001" },
+      { id: "ro_348", brand: "Roche", type: "محاليل ومستهلكات", name: "Kit Maintanence E2010/E411 6Month", code: "741-0359" },
+      { id: "ro_349", brand: "Roche", type: "محاليل ومستهلكات", name: "Kit Maintanence E2010/E411 12 Month", code: "741-0361" },
+      { id: "ro_350", brand: "Roche", type: "محاليل ومستهلكات", name: "Kit Maintanence 1 c501/502", code: "727-922" },
+      { id: "ro_351", brand: "Roche", type: "محاليل ومستهلكات", name: "Kit Maintanence 601", code: "768-3980" },
+      { id: "ro_352", brand: "Roche", type: "محاليل ومستهلكات", name: "E-411 CPU-ECPU550", code: "741-5099" },
+      { id: "ro_353", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB ASSY EIO2", code: "741-5070" },
+      { id: "ro_354", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB ASSY DO4 A", code: "741-5071" },
+      { id: "ro_355", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB CASSETTE RACK INDICATOR - INTEGRA", code: "4922891001" },
+      { id: "ro_356", brand: "Roche", type: "محاليل ومستهلكات", name: "Probe Set Integra 400/400plus", code: "28078165001" },
+      { id: "ro_357", brand: "Roche", type: "محاليل ومستهلكات", name: "TUBE CELL ASSY 768-254", code: "3060039001" },
+      { id: "ro_358", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB ASSY DTI 2 PCB 727-5057", code: "5132371001" },
+      { id: "ro_359", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB DO2-E3 PI ASSY 768-5038", code: "4472691001" },
+      { id: "ro_360", brand: "Roche", type: "محاليل ومستهلكات", name: "CONTROL UNIT PANEL PC2 ASSY E411 MONITOR (741-8874)", code: "5946921001" },
+      { id: "ro_361", brand: "Roche", type: "محاليل ومستهلكات", name: "Probe Reagent Assy c311 727-0890", code: "4547187001" },
+      { id: "ro_362", brand: "Roche", type: "محاليل ومستهلكات", name: "PROBE SAMPLE S C311 SAMPLE PROBE", code: "8239711001" },
+      { id: "ro_363", brand: "Roche", type: "محاليل ومستهلكات", name: "PIERCE PACKING A ASSY 724-0923", code: "5655978001" },
+      { id: "ro_364", brand: "Roche", type: "محاليل ومستهلكات", name: "HMTC200 - C311", code: "7840152001" },
+      { id: "ro_365", brand: "Roche", type: "محاليل ومستهلكات", name: "HADC200 - C311", code: "7840144001" },
+      { id: "ro_366", brand: "Roche", type: "محاليل ومستهلكات", name: "DEGASSER-C311", code: "7375794001" },
+      { id: "ro_367", brand: "Roche", type: "محاليل ومستهلكات", name: "R Syring - C311", code: "7839421001" },
+      { id: "ro_368", brand: "Roche", type: "محاليل ومستهلكات", name: "S Syring - C311", code: "7839413001" },
+      { id: "ro_369", brand: "Roche", type: "محاليل ومستهلكات", name: "Pump - C311", code: "7839545001" },
+      { id: "ro_370", brand: "Roche", type: "محاليل ومستهلكات", name: "DO1 - C311", code: "7840136001" },
+      { id: "ro_371", brand: "Roche", type: "محاليل ومستهلكات", name: "EECL300 - E411", code: "7838867001" },
+      { id: "ro_372", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB EECL 123 768-5024", code: "4431634001" },
+      { id: "ro_373", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB DO1 741-5031", code: "11709356001" },
+      { id: "ro_374", brand: "Roche", type: "محاليل ومستهلكات", name: "ROTARY SOLENOID 2ER45-33 ASSY", code: "11709143001" },
+      { id: "ro_375", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB PHOTOMETRY CONTROL V4", code: "5980623001" },
+      { id: "ro_376", brand: "Roche", type: "محاليل ومستهلكات", name: "WORKSTATION IN/OUT", code: "28163197001" },
+      { id: "ro_377", brand: "Roche", type: "محاليل ومستهلكات", name: "EWS GRIPPER UNIT", code: "7850999001" },
+      { id: "ro_378", brand: "Roche", type: "محاليل ومستهلكات", name: "CONTROLLER RACK 400 PLUS", code: "7668562001" },
+      { id: "ro_379", brand: "Roche", type: "محاليل ومستهلكات", name: "PCB ANALYZER CONTROL I400", code: "5028507001" },
+      { id: "ro_380", brand: "Roche", type: "محاليل ومستهلكات", name: "CUVETTE SPIRAL FEEDER", code: "28178976001" },
+      { id: "ro_381", brand: "Roche", type: "محاليل ومستهلكات", name: "Valve Body - E411", code: "6746772001" },
+      { id: "ro_382", brand: "Roche", type: "محاليل ومستهلكات", name: "T/V Carrier", code: "7847483001" },
+      { id: "ro_383", brand: "Roche", type: "محاليل ومستهلكات", name: "REACTİON CELL FOR C501-C502 (1 SET - 8 PCS)", code: "4854241001" },
+      { id: "ro_384", brand: "Roche", type: "محاليل ومستهلكات", name: "REACTİON CELL FOR C311 (1 SET - 6 PCS)", code: "4555040001" },
+      { id: "ro_385", brand: "Roche", type: "محاليل ومستهلكات", name: "Lamp Halogen 12V 100W Assy İntegra 400", code: "5070856001" },
+      { id: "ro_386", brand: "Roche", type: "محاليل ومستهلكات", name: "PADDLE (MIXING) WITH SCREW 741-0934 E411", code: "12026864001" },
+      { id: "ro_387", brand: "Roche", type: "محاليل ومستهلكات", name: "PADDLE MIXING ( P ) 768-3875", code: "490331689" },
+      { id: "ro_388", brand: "Roche", type: "محاليل ومستهلكات", name: "BlankCell", code: "11729306122" },
+      { id: "ro_389", brand: "Roche", type: "محاليل ومستهلكات", name: "Measuring Cell", code: "5151643001" },
+      { id: "ro_390", brand: "Roche", type: "محاليل ومستهلكات", name: "Mixing Tower", code: "28107181001" },
+      { id: "ro_391", brand: "Roche", type: "محاليل ومستهلكات", name: "Waste Conteiner", code: "21046179001" },
+      { id: "ro_392", brand: "Roche", type: "محاليل ومستهلكات", name: "Adapter Sys Clean Ku fbl.", code: "11933159001" },
+      { id: "ro_393", brand: "Roche", type: "محاليل ومستهلكات", name: "COBAS WHİTE CUP", code: "21045318001" },
+      { id: "ro_394", brand: "Roche", type: "محاليل ومستهلكات", name: "Sample Cups", code: "10394246001" },
+      { id: "ro_395", brand: "Roche", type: "محاليل ومستهلكات", name: "Sample Rack Set", code: "11902997001" },
+      { id: "ro_396", brand: "Roche", type: "محاليل ومستهلكات", name: "Integra Microcuvette", code: "21043862001" },
+
+      // Cobas C111 - COBAS C 111 STOK
+      { id: "c111_1", brand: "Cobas C111", type: "كيتات فحص", name: "Total Protein", code: "4657586190" },
+      { id: "c111_2", brand: "Cobas C111", type: "كيتات فحص", name: "Alanine Aminotransferase/ALT/GPT", code: "4718569190" },
+      { id: "c111_3", brand: "Cobas C111", type: "كيتات فحص", name: "Asparat Aminotransferase/AST/GOT", code: "4657543190" },
+      { id: "c111_4", brand: "Cobas C111", type: "كيتات فحص", name: "UREA (4 x 100)", code: "4657616190" },
+      { id: "c111_5", brand: "Cobas C111", type: "كيتات فحص", name: "Uric Acid (4 x 100)", code: "4657608190" },
+      { id: "c111_6", brand: "Cobas C111", type: "كيتات فحص", name: "Cholesterol (4 x 100)", code: "4718917190" },
+      { id: "c111_7", brand: "Cobas C111", type: "كيتات فحص", name: "Creatinine Jaffé (comp.) (4 x 100)", code: "5401755190" },
+      { id: "c111_8", brand: "Cobas C111", type: "كيتات فحص", name: "Calcium (4 x 100)", code: "5061504190" },
+      { id: "c111_9", brand: "Cobas C111", type: "كيتات فحص", name: "Glucose HK (4 x 100)", code: "4657527190" },
+      { id: "c111_10", brand: "Cobas C111", type: "كيتات فحص", name: "Albumine BCG serum application", code: "4657357190" },
+      { id: "c111_11", brand: "Cobas C111", type: "كيتات فحص", name: "BIL-T GEN .3 400 TESTS COBAS C111", code: "5795648190" },
+      { id: "c111_12", brand: "Cobas C111", type: "كيتات فحص", name: "ALP (4 x 50 test)", code: "4657373190" },
+      { id: "c111_13", brand: "Cobas C111", type: "كيتات فحص", name: "g-Glutamyltransf. /GGT (2 x 100)", code: "5401461190" },
+      { id: "c111_14", brand: "Cobas C111", type: "كيتات فحص", name: "Triglycerides (4x 50)", code: "4657594190" },
+      { id: "c111_15", brand: "Cobas C111", type: "كيتات فحص", name: "HDL-Cholesterol", code: "5401488190" },
+      { id: "c111_16", brand: "Cobas C111", type: "كيتات فحص", name: "Creatinine Kinase (2 x 100)", code: "5401593190" },
+      { id: "c111_17", brand: "Cobas C111", type: "كيتات فحص", name: "Amylase liquid (2 x 100)", code: "5401496190" },
+      { id: "c111_18", brand: "Cobas C111", type: "كيتات فحص", name: "Lactate", code: "5401666190" },
+      { id: "c111_19", brand: "Cobas C111", type: "كيتات فحص", name: "D-Dimer Gen.2 (4x50)", code: "5077753190" },
+      { id: "c111_20", brand: "Cobas C111", type: "كيتات فحص", name: "Lipase", code: "5401704190" },
+      { id: "c111_21", brand: "Cobas C111", type: "كيتات فحص", name: "LDL-C GEN.3, 100 TESTS, COBAS C111", code: "7005806190" },
+      { id: "c111_22", brand: "Cobas C111", type: "كيتات فحص", name: "LDH (2x50)", code: "5401674190" },
+      { id: "c111_23", brand: "Cobas C111", type: "كيتات فحص", name: "Iron", code: "5401658190" },
+      { id: "c111_24", brand: "Cobas C111", type: "كيتات فحص", name: "Creatinine Kinase MB (2x 50)", code: "5401593190" },
+      { id: "c111_25", brand: "Cobas C111", type: "كيتات فحص", name: "Phosphorus inorg. (2 x 50)", code: "5401780190" },
+      { id: "c111_26", brand: "Cobas C111", type: "كيتات فحص", name: "Bilirubin Direct (2 x 50)", code: "5589134190" },
+      { id: "c111_27", brand: "Cobas C111", type: "كيتات فحص", name: "Magnesium", code: "8900019190" },
+      { id: "c111_28", brand: "Cobas C111", type: "كيتات فحص", name: "CRP4", code: "7876432190" },
+      { id: "c111_29", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "HbA1c Hemolyzing reagent Gen 2", code: "5007232190" },
+      { id: "c111_30", brand: "Cobas C111", type: "كيتات فحص", name: "HbA1c C111 A1c-3", code: "5336180190" },
+      { id: "c111_31", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "Printer paper", code: "4352483001" },
+      { id: "c111_32", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "Activator", code: "4663632190" },
+      { id: "c111_33", brand: "Cobas C111", type: "معايرات CalSet", name: "D-Dimer Cal Gen2 Set", code: "5050901190" },
+      { id: "c111_34", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "Cobas sample cup , 5000 pcs", code: "10394246001" },
+      { id: "c111_35", brand: "Cobas C111", type: "معايرات CalSet", name: "Calibrator f.a.s. HbA1c", code: "4528417190" },
+      { id: "c111_36", brand: "Cobas C111", type: "معايرات CalSet", name: "Calibrator f.a.s. Lipids", code: "12172623122" },
+      { id: "c111_37", brand: "Cobas C111", type: "معايرات CalSet", name: "Calibrator f.a.s. CK-MB", code: "11447394216" },
+      { id: "c111_38", brand: "Cobas C111", type: "معايرات CalSet", name: "Calibrator f.a.s.", code: "10759350190" },
+      { id: "c111_39", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "HbA1c Hemolyzing reagent 1000 ml", code: "11488457122" },
+      { id: "c111_40", brand: "Cobas C111", type: "محاليل ومستهلكات", name: "Micro Cuvettes", code: "4357108001" },
+      { id: "c111_41", brand: "Cobas C111", type: "معايرات CalSet", name: "Calibrator f.a.s. Protein", code: "11355279216" },
+      { id: "c111_42", brand: "Cobas C111", type: "كونترول Control", name: "HbA1c Control N", code: "5479207190" },
+      { id: "c111_43", brand: "Cobas C111", type: "كونترول Control", name: "HbA1c Control P", code: "5912504190" },
+      { id: "c111_44", brand: "Cobas C111", type: "كونترول Control", name: "D-Dimer Gen2 control I/II", code: "5050936190" },
+
+      // Beckman Access - BECKMAN COULTER ACCESS 2 / DXI STOCK
+      { id: "bm_1", brand: "Beckman Access", type: "كيتات فحص", name: "Access Cortisol", code: "33600" },
+      { id: "bm_2", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Cortisol Calibrators", code: "33605" },
+      { id: "bm_3", brand: "Beckman Access", type: "كيتات فحص", name: "Insulin", code: "33410" },
+      { id: "bm_4", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Ultrasensitive Insulin Calibrators", code: "33415" },
+      { id: "bm_5", brand: "Beckman Access", type: "كيتات فحص", name: "Access hs TnI", code: "B52699" },
+      { id: "bm_6", brand: "Beckman Access", type: "معايرات CalSet", name: "Access hs TnI Calibrators", code: "B52700" },
+      { id: "bm_7", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Myoglobine Calibrators", code: "913244" },
+      { id: "bm_8", brand: "Beckman Access", type: "كيتات فحص", name: "Access 25(OH) Total Vitamin D", code: "B24838" },
+      { id: "bm_9", brand: "Beckman Access", type: "معايرات CalSet", name: "Access 25(OH) Total Vitamin D Calibrators", code: "B24839" },
+      { id: "bm_10", brand: "Beckman Access", type: "كيتات فحص", name: "Access 25(OH) Total Vitamin D (DXI)", code: "A98856" },
+      { id: "bm_11", brand: "Beckman Access", type: "معايرات CalSet", name: "Access 25(OH) Total Vitamin D Calibrators (DXI)", code: "A98857" },
+      { id: "bm_12", brand: "Beckman Access", type: "كيتات فحص", name: "Access Vitamin B12", code: "33000" },
+      { id: "bm_13", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Vitamin B12 Calibrators", code: "33005" },
+      { id: "bm_14", brand: "Beckman Access", type: "كيتات فحص", name: "Access Folate", code: "A98032" },
+      { id: "bm_15", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Folate Calibrators", code: "A98033" },
+      { id: "bm_16", brand: "Beckman Access", type: "كيتات فحص", name: "Access Ferritin", code: "33020" },
+      { id: "bm_17", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Ferritin calibrators", code: "33025" },
+      { id: "bm_18", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Thyroglobulin (TG) Calibrators", code: "33865" },
+      { id: "bm_19", brand: "Beckman Access", type: "كيتات فحص", name: "Thyroglobulin (TG)", code: "C71762" },
+      { id: "bm_20", brand: "Beckman Access", type: "كيتات فحص", name: "Anti Thyroid peroxidase (Anti TPO)", code: "A12985" },
+      { id: "bm_21", brand: "Beckman Access", type: "معايرات CalSet", name: "Access TPO antibody Calibrators", code: "A18227" },
+      { id: "bm_22", brand: "Beckman Access", type: "كيتات فحص", name: "Anti-Thyroglobulin (Anti TG)", code: "A32898" },
+      { id: "bm_23", brand: "Beckman Access", type: "معايرات CalSet", name: "Anti-Thyroglobulin (Anti TG) Calibrators", code: "A36920" },
+      { id: "bm_24", brand: "Beckman Access", type: "كيتات فحص", name: "Access Free T3", code: "A13422" },
+      { id: "bm_25", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Free T3 Calibrators", code: "A13430" },
+      { id: "bm_26", brand: "Beckman Access", type: "كيتات فحص", name: "Access Free T4", code: "33880" },
+      { id: "bm_27", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Free T4 Calibrators", code: "33885" },
+      { id: "bm_28", brand: "Beckman Access", type: "كيتات فحص", name: "Access TSH (3rd IS) 2x100 Det", code: "B63284" },
+      { id: "bm_29", brand: "Beckman Access", type: "معايرات CalSet", name: "Access TSH (3rd IS) CALIBRATORS", code: "B63285" },
+      { id: "bm_30", brand: "Beckman Access", type: "معايرات CalSet", name: "ACCESS INTACT PTH (İPTH) CALIBRATORS", code: "A16953" },
+      { id: "bm_31", brand: "Beckman Access", type: "كيتات فحص", name: "ACCESS CK-MB", code: "386371" },
+      { id: "bm_32", brand: "Beckman Access", type: "كيتات فحص", name: "Sensitive Estradiol reaktif (SE2)", code: "B84493" },
+      { id: "bm_33", brand: "Beckman Access", type: "معايرات CalSet", name: "Sensitive Estradiol reaktif (SE2) CALİBRATOR", code: "B84494" },
+      { id: "bm_34", brand: "Beckman Access", type: "كيتات فحص", name: "Access hLH", code: "33510" },
+      { id: "bm_35", brand: "Beckman Access", type: "معايرات CalSet", name: "Access hLH Calibrators", code: "33515" },
+      { id: "bm_36", brand: "Beckman Access", type: "كيتات فحص", name: "Access Testosterone", code: "33560" },
+      { id: "bm_37", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Testosterone Calibrators", code: "33565" },
+      { id: "bm_38", brand: "Beckman Access", type: "كيتات فحص", name: "Access FSH", code: "33520" },
+      { id: "bm_39", brand: "Beckman Access", type: "معايرات CalSet", name: "FSH Calibrator Set", code: "33525" },
+      { id: "bm_40", brand: "Beckman Access", type: "كيتات فحص", name: "Access Total B- hCG 2x50 Det", code: "A85264" },
+      { id: "bm_41", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Total B- hCG Calibrators", code: "B11754" },
+      { id: "bm_42", brand: "Beckman Access", type: "كيتات فحص", name: "ACCESS DHEA-S", code: "A10826" },
+      { id: "bm_43", brand: "Beckman Access", type: "معايرات CalSet", name: "ACCESS DHEA-S CALIBRATORS", code: "A10827" },
+      { id: "bm_44", brand: "Beckman Access", type: "كيتات فحص", name: "Access Prolactin", code: "33530" },
+      { id: "bm_45", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Prolactin Calibrators", code: "33535" },
+      { id: "bm_46", brand: "Beckman Access", type: "كيتات فحص", name: "Access Progesterone", code: "33550" },
+      { id: "bm_47", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Progesterone Calibrators", code: "33555" },
+      { id: "bm_48", brand: "Beckman Access", type: "كيتات فحص", name: "Access AFP", code: "33210" },
+      { id: "bm_49", brand: "Beckman Access", type: "معايرات CalSet", name: "Access AFP Calibrators", code: "33215" },
+      { id: "bm_50", brand: "Beckman Access", type: "كيتات فحص", name: "Access Hybritech PSA", code: "37200" },
+      { id: "bm_51", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Hybritech PSA Calibrators", code: "37205" },
+      { id: "bm_52", brand: "Beckman Access", type: "كيتات فحص", name: "Access Hybritech Free PSA", code: "37210" },
+      { id: "bm_53", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Hybritech Free PSA Calibrators", code: "37215" },
+      { id: "bm_54", brand: "Beckman Access", type: "كيتات فحص", name: "CEA", code: "33200" },
+      { id: "bm_55", brand: "Beckman Access", type: "معايرات CalSet", name: "CEA CALİBRATOR", code: "33205" },
+      { id: "bm_56", brand: "Beckman Access", type: "كيتات فحص", name: "HIV COMBO V2 BİORAD", code: "C28430" },
+      { id: "bm_57", brand: "Beckman Access", type: "كيتات فحص", name: "HIV", code: "A59428" },
+      { id: "bm_58", brand: "Beckman Access", type: "معايرات CalSet", name: "HBSAG CALİBRATOR", code: "A24292" },
+      { id: "bm_59", brand: "Beckman Access", type: "كيتات فحص", name: "Access OV MONITOR", code: "386357" },
+      { id: "bm_60", brand: "Beckman Access", type: "كيتات فحص", name: "Access GI MONITOR", code: "387687" },
+      { id: "bm_61", brand: "Beckman Access", type: "معايرات CalSet", name: "Access GI MONITOR CALİBRATOR", code: "387688" },
+      { id: "bm_62", brand: "Beckman Access", type: "كيتات فحص", name: "Access BR MONITOR", code: "387620" },
+      { id: "bm_63", brand: "Beckman Access", type: "معايرات CalSet", name: "Access BR MONITOR CALİBRATOR", code: "387647" },
+      { id: "bm_64", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Access System Check Sol, 6x4 mL", code: "81910" },
+      { id: "bm_65", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Access Substrate 4x130 mL", code: "81906" },
+      { id: "bm_66", brand: "Beckman Access", type: "كيتات فحص", name: "Access Inhibin A", code: "A36097" },
+      { id: "bm_67", brand: "Beckman Access", type: "معايرات CalSet", name: "Access Inhibin A Calibrators", code: "A36098" },
+      { id: "bm_68", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Phometer Lamp 12V-20W", code: "MU988800" },
+      { id: "bm_69", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "16 mm Insert Cups (1000 each)", code: "81917" },
+      { id: "bm_70", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Wash Buffer Access 2", code: "A16792" },
+      { id: "bm_71", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Wash Buffer DXI", code: "A16793" },
+      { id: "bm_72", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Access Waste Bag", code: "81904" },
+      { id: "bm_73", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "CONDRAD", code: "81911" },
+      { id: "bm_74", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "CITRONAX", code: "81912" },
+      { id: "bm_75", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Reaction Wessels 16x98", code: "81901" },
+      { id: "bm_76", brand: "Beckman Access", type: "محاليل ومستهلكات", name: "Cleaning Solution 4*54 mL", code: "ODR20067" },
+
+      // Abbott Architect - ABBOTT STOCK
+      { id: "ab_1", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HIV - 100 Test", code: "4J2727" },
+      { id: "ab_2", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect HIV Calibrator", code: "4J2703" },
+      { id: "ab_3", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect HIV Control", code: "4J2712" },
+      { id: "ab_4", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HIV - 500 Test", code: "4J2737" },
+      { id: "ab_5", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HIV - 4x500 Test", code: "4J2732" },
+      { id: "ab_6", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Hbs Ag Qual II- 100 Test", code: "2G2225" },
+      { id: "ab_7", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect Hbs Ag Qual II- Control", code: "2G2210" },
+      { id: "ab_8", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Hbs Ag Qual II- Calibrator", code: "2G2201" },
+      { id: "ab_9", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Hbs Ag Qual II- 500 Test", code: "2G2235" },
+      { id: "ab_10", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HbeAg Reagent kit 100 Test", code: "6C3227" },
+      { id: "ab_11", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti - Hbe - 100 Test", code: "6C3425" },
+      { id: "ab_12", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti Hbs - 100 Test", code: "7C1829" },
+      { id: "ab_13", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti Hbs - 500 Test", code: "7C18H" },
+      { id: "ab_14", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti Hbs - 4x500 Test", code: "7C1833" },
+      { id: "ab_15", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Anti HBS Calibrator", code: "7C1803" },
+      { id: "ab_16", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Anti HBS Control", code: "7C1813" },
+      { id: "ab_17", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HAVab - IgM", code: "6C3027" },
+      { id: "ab_18", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HAVab - IgM - 400 Test", code: "6C3022" },
+      { id: "ab_19", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect HAVab - IgM - Cals", code: "6C3010" },
+      { id: "ab_20", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HAVab - IgG", code: "6C2927" },
+      { id: "ab_21", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti HBC II - 100 Test", code: "8L4425" },
+      { id: "ab_22", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti HBC M - 100 Test", code: "6C3327" },
+      { id: "ab_23", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti HBC M - 4x100 Test", code: "6C3322" },
+      { id: "ab_24", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti HCV -4x 500 Test", code: "6C3732" },
+      { id: "ab_25", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti HCV - 100 / 500 Test", code: "6C3735" },
+      { id: "ab_26", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Anti HCV - Cals", code: "6C3701" },
+      { id: "ab_27", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect Anti HCV - Control", code: "6C3710" },
+      { id: "ab_28", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Syphilis TP- 100 Test", code: "8D0632" },
+      { id: "ab_29", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Syphilis TP- 500 Test", code: "8D0642" },
+      { id: "ab_30", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Syphilis TP- Cal", code: "8D0604" },
+      { id: "ab_31", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect Syphilis TP-Cont", code: "8D0613" },
+      { id: "ab_32", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Toxo Ig G - 100 Test", code: "6C1925" },
+      { id: "ab_33", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect Toxo Ig G - Control", code: "6C1910" },
+      { id: "ab_34", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Toxo M - 100 Test", code: "6C2025" },
+      { id: "ab_35", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect TOXO IgM Calibrator", code: "6C2001" },
+      { id: "ab_36", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect TOXO IgM Control", code: "6C2010" },
+      { id: "ab_37", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Rubella Ig G- 100 Test", code: "6C1726" },
+      { id: "ab_38", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Rubella Ig M- 100 Test", code: "6C1825" },
+      { id: "ab_39", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Rubella IgM Calibrator", code: "6C1801" },
+      { id: "ab_40", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect Rubella IgM Control", code: "6C1813" },
+      { id: "ab_41", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect CMV Ig G - 100 Test", code: "6C1525" },
+      { id: "ab_42", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect CMV Ig G - Control", code: "6C1510" },
+      { id: "ab_43", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect CMV Ig M - 100 Test", code: "6C1625" },
+      { id: "ab_44", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott CMV IGM Calibrator", code: "6C1601" },
+      { id: "ab_45", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott CMV IGM Control", code: "6C1610" },
+      { id: "ab_46", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti CCP- 100 Test", code: "1P6525" },
+      { id: "ab_47", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect PCT- 100 Test", code: "6P2225" },
+      { id: "ab_48", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect PCT- 500 Test", code: "6P2235" },
+      { id: "ab_49", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Homosistein - 100 Test", code: "1L7127" },
+      { id: "ab_50", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Cyclosporine - 100 Test", code: "3R3025" },
+      { id: "ab_51", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Abbott Architect Cyclosporine - Preci.", code: "1L7555" },
+      { id: "ab_52", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Tacrolimus - 100 Test", code: "1L7725" },
+      { id: "ab_53", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Valporic Acid - 100 Test", code: "1P3525" },
+      { id: "ab_54", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect ProBNP- 100 Test", code: "8K2828" },
+      { id: "ab_55", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect ALERE NT-ProBNP- 100 Test / Cal", code: "2R1025" },
+      { id: "ab_56", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect ALERE NT-ProBNP Control", code: "2R1010" },
+      { id: "ab_57", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FT4 - 100 Test", code: "7K6529" },
+      { id: "ab_58", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FT4 - 500 Test", code: "7K6539" },
+      { id: "ab_59", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FT4 - 2000 Test", code: "7K6534" },
+      { id: "ab_60", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect FT4 Cals", code: "7K6510" },
+      { id: "ab_61", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FT3 - 100 Test / Cals", code: "7K6302" },
+      { id: "ab_62", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FT3 - 2000 Test", code: "7K6332" },
+      { id: "ab_63", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect TSH - 100 Test", code: "7K6225" },
+      { id: "ab_64", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect TSH - 500 Test", code: "7K6235" },
+      { id: "ab_65", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect TSH - 2000 Test", code: "7K6230" },
+      { id: "ab_66", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect TSH Cals", code: "7K6201" },
+      { id: "ab_67", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti - TPO - 100 Test", code: "2K4725" },
+      { id: "ab_68", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti - TPO - 400 Test", code: "2K4720" },
+      { id: "ab_69", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti - TG - 100 Test", code: "2K4625" },
+      { id: "ab_70", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Anti - TG - 400 Test", code: "2K4620" },
+      { id: "ab_71", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect STAT CK-MB - 100 Test", code: "2K4228" },
+      { id: "ab_72", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect STAT CK-MB - 500 Test", code: "2K4238" },
+      { id: "ab_73", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect STAT CK-MB - Calset", code: "2K4201" },
+      { id: "ab_74", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect hsTnI - 100 Test", code: "3P2527" },
+      { id: "ab_75", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect hsTnI - CALSET", code: "3P2502" },
+      { id: "ab_76", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Vitamin D - 100 Test", code: "5P0225" },
+      { id: "ab_77", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Vitamin D - 500 Test", code: "5P0235" },
+      { id: "ab_78", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Vitamin D - 2000 Test", code: "5P0230" },
+      { id: "ab_79", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Vitamin D Cals", code: "5P0201" },
+      { id: "ab_80", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect B12 - 100 Test", code: "7K6125" },
+      { id: "ab_81", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect B12 - 500 Test", code: "7K6135" },
+      { id: "ab_82", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect B12 - Cals", code: "7K6101" },
+      { id: "ab_83", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Folate - 100 Test", code: "1P7425" },
+      { id: "ab_84", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Folate - 500 Test", code: "1P7435" },
+      { id: "ab_85", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Folate - Cals", code: "1P7401" },
+      { id: "ab_86", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ferritin - 100 Test", code: "7K5925" },
+      { id: "ab_87", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ferritin - 500 Test", code: "7K5935" },
+      { id: "ab_88", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ferritin - 4X 500 Test", code: "7K5930" },
+      { id: "ab_89", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Ferritin Cals", code: "7K5901" },
+      { id: "ab_90", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Cortisol - 100 Test", code: "8D1525" },
+      { id: "ab_91", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect iPTH - 100 Test", code: "8K2528" },
+      { id: "ab_92", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect iPTH - Cals", code: "8K2504" },
+      { id: "ab_93", brand: "Abbott Architect", type: "كونترول Control", name: "Abbott Architect iPTH Control", code: "8K2513" },
+      { id: "ab_94", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Insulin - 100 Test", code: "8K4128" },
+      { id: "ab_95", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Estradiol - 100 Test", code: "7K7225" },
+      { id: "ab_96", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Estradiol - 500 Test", code: "7K7235" },
+      { id: "ab_97", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Estradiol - Cals", code: "7K7201" },
+      { id: "ab_98", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect HCG-B - 100 Test", code: "7K7825" },
+      { id: "ab_99", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect HCG-B Cals", code: "7K7801" },
+      { id: "ab_100", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect FSH - 100 Test", code: "7K7525" },
+      { id: "ab_101", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect FSH - Cals", code: "7K7501" },
+      { id: "ab_102", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect LH - 100 Test", code: "2P4025" },
+      { id: "ab_103", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect LH Cals", code: "2P4001" },
+      { id: "ab_104", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect 2nd Testosterone - 100 Test", code: "2P1328" },
+      { id: "ab_105", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect 2nd Testosterone - Cals", code: "2P1301" },
+      { id: "ab_106", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect DHEA - S - 100 Test", code: "8K2727" },
+      { id: "ab_107", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Progesteron - 100 Test", code: "7K7725" },
+      { id: "ab_108", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Prolactin - 100 Test", code: "7K7625" },
+      { id: "ab_109", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Prolactin - Cals", code: "7K7601" },
+      { id: "ab_110", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect AFP - 100 Test", code: "3P3625" },
+      { id: "ab_111", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect AFP Cals", code: "3P3601" },
+      { id: "ab_112", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect CEA - 100 Test", code: "7K6827" },
+      { id: "ab_113", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect CEA Cals", code: "7K6802" },
+      { id: "ab_114", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Total PSA - 100 Test", code: "7K7025" },
+      { id: "ab_115", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Total PSA - Cals", code: "7K7001" },
+      { id: "ab_116", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Free PSA - 100 Test", code: "7K7125" },
+      { id: "ab_117", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Free PSA - Cals", code: "7K7101" },
+      { id: "ab_118", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ca 19-9 XR - 100 Test", code: "2K9132" },
+      { id: "ab_119", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Ca 19-9 XR - Cals", code: "2K9103" },
+      { id: "ab_120", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ca 15-3 - 100 Test", code: "2K4427" },
+      { id: "ab_121", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Ca 15-3 - Cals", code: "2K9102" },
+      { id: "ab_122", brand: "Abbott Architect", type: "كيتات فحص", name: "Abbott Architect Ca 125 - 100 Test", code: "2K4529" },
+      { id: "ab_123", brand: "Abbott Architect", type: "معايرات CalSet", name: "Abbott Architect Ca 125 - Cals", code: "2K4502" },
+      { id: "ab_124", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Split Septum (200)", code: "4D1803" },
+      { id: "ab_125", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Probe Conditioning", code: "1L5640" },
+      { id: "ab_126", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "TRIGGER SOLUTİONS", code: "6C5563" },
+      { id: "ab_127", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "PRE-TRIGGER SOLUTİONS", code: "6E2368" },
+      { id: "ab_128", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Sample Cups", code: "7C1401" },
+      { id: "ab_129", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Concantrated wash buffer", code: "6C5458" },
+      { id: "ab_130", brand: "Abbott Architect", type: "محاليل ومستهلكات", name: "Abbott Architect Reaction Vessels (4000 each)", code: "7C1503" },
+      { id: "ab_131", brand: "Abbott Architect", type: "كيتات فحص", name: "CRP TURBİ WR 2275 TEST ARCHİTECT C SERİAL", code: "06T81-63" },
+      { id: "ab_132", brand: "Abbott Architect", type: "معايرات CalSet", name: "MULTICONSTITUENT Calıbrator 3 x5 ml", code: "1E6506" },
+      { id: "ab_133", brand: "Abbott Architect", type: "معايرات CalSet", name: "ICT Serum Calibrator", code: "1E4604" },
+      { id: "ab_134", brand: "Abbott Architect", type: "كيتات فحص", name: "Qantina RF", code: "6K4402" },
+      { id: "ab_135", brand: "Abbott Architect", type: "كيتات فحص", name: "LDH - 600 Test", code: "4t0320" },
+      { id: "ab_136", brand: "Abbott Architect", type: "كيتات فحص", name: "ALTL - 1200 Test", code: "4S8820" },
+
+      // Cobas C 8000 - COBAS 8000 STOK
+      { id: "c8000_1", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FT4 III - 300 Test", code: "9043284190" },
+      { id: "c8000_2", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FT3 III- 300 Test", code: "9005811190" },
+      { id: "c8000_3", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS TSH- 300 Test", code: "8443432190" },
+      { id: "c8000_4", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS TG- 300 Test", code: "8906564190" },
+      { id: "c8000_5", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS ANTİ-TG- 300 Test", code: "9005021190" },
+      { id: "c8000_6", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS ANTİ-TPO- 300 Test", code: "7026935190" },
+      { id: "c8000_7", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS PTH 300 Test", code: "7251068190" },
+      { id: "c8000_8", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS INSULİN-300 TEST", code: "7027559190" },
+      { id: "c8000_9", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS IGE II - 300 TEST", code: "7027516190" },
+      { id: "c8000_10", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS VIT B12 II- 300 Test", code: "7028121190" },
+      { id: "c8000_11", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FERRITINE- 300 Test", code: "7027273190" },
+      { id: "c8000_12", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FOLATE- 300 Test", code: "7027290190" },
+      { id: "c8000_13", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CK-MB - 100 Test", code: "7027087190" },
+      { id: "c8000_14", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS TROPONINE THS- 300 Test", code: "9315357190" },
+      { id: "c8000_15", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS TROPONINE I- 300 Test", code: "7028059190" },
+      { id: "c8000_16", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CORTISOL II - 300 Test", code: "7027150190" },
+      { id: "c8000_17", brand: "Cobas C 8000", type: "كيتات فحص", name: "C-Peptide Elecsys E2G 100 Test", code: "7027168190" },
+      { id: "c8000_18", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS ACTH- 100 Test", code: "8946728190" },
+      { id: "c8000_19", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS PROLACTINE- 300 Test", code: "7027737190" },
+      { id: "c8000_20", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FSH- 300 Test", code: "8932387190" },
+      { id: "c8000_21", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys DHEA-S 100-TEST", code: "7027192190" },
+      { id: "c8000_22", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS LH - 300 TEST", code: "7027575190" },
+      { id: "c8000_23", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS Estradiol - 300 TEST", code: "7027249190" },
+      { id: "c8000_24", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys HCG+B- 300 TEST", code: "7251025190" },
+      { id: "c8000_25", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Testotosterone II- 300 TEST", code: "8946370190" },
+      { id: "c8000_26", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Progesteron II- 300 TEST", code: "7027699190" },
+      { id: "c8000_27", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS TOTAL PSA 300 Test", code: "8791732190" },
+      { id: "c8000_28", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS FREE PSA 300 Test", code: "8828610190" },
+      { id: "c8000_29", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CEA- 300 Test", code: "7027079190" },
+      { id: "c8000_30", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS AFP - 300 Test", code: "9015124190" },
+      { id: "c8000_31", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CA 15-3 2- 300 Test", code: "7027001190" },
+      { id: "c8000_32", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CA 19-9 - 300 Test", code: "7027028190" },
+      { id: "c8000_33", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CA 125- 300 Test", code: "7026986190" },
+      { id: "c8000_34", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS CA 72-4- 300 Test", code: "9005706190" },
+      { id: "c8000_35", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Anti - HAV M-300 Test", code: "7026773190" },
+      { id: "c8000_36", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "DEPROTEINIZER 125 ML", code: "3110435180" },
+      { id: "c8000_37", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Anti-Hbe-300 Test", code: "7026838190" },
+      { id: "c8000_38", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS ANTI-HCV- 300 Test", code: "8837058190" },
+      { id: "c8000_39", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS HBSAG II -300 Test", code: "8814848190" },
+      { id: "c8000_40", brand: "Cobas C 8000", type: "كيتات فحص", name: "HIV DUO ELECSYS E2G 300 V2", code: "8836973190" },
+      { id: "c8000_41", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS ANTI-HBS II- 300 Test", code: "8498610190" },
+      { id: "c8000_42", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Syphilis 300 Test", code: "9015051190" },
+      { id: "c8000_43", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys ToXo IgG 300 Test", code: "7028008190" },
+      { id: "c8000_44", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys ToXo IgM 300 Test", code: "7028024190" },
+      { id: "c8000_45", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Rubella IgG 300 Test", code: "7027770190" },
+      { id: "c8000_46", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Rubella IgM 300 Test", code: "7027796190" },
+      { id: "c8000_47", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys CMV IgG 300 Test", code: "9118551190" },
+      { id: "c8000_48", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys CMV IgM 300 Test", code: "7027133190" },
+      { id: "c8000_49", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys EBV EBNA IgG", code: "8355380190" },
+      { id: "c8000_50", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys hGH", code: "7027486190" },
+      { id: "c8000_51", brand: "Cobas C 8000", type: "كيتات فحص", name: "PCT(X) Brahms (Roche) Elecsys cobas e 300", code: "9318747190" },
+      { id: "c8000_52", brand: "Cobas C 8000", type: "كيتات فحص", name: "ELECSYS PROBNP(X) - 300 Test", code: "9315284190" },
+      { id: "c8000_53", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys IGF-1 Cobas 801", code: "7475918190" },
+      { id: "c8000_54", brand: "Cobas C 8000", type: "كيتات فحص", name: "Anti-CCP", code: "7251670190" },
+      { id: "c8000_55", brand: "Cobas C 8000", type: "كيتات فحص", name: "AMH 300 TEST", code: "8819378190" },
+      { id: "c8000_56", brand: "Cobas C 8000", type: "كيتات فحص", name: "Myoglobin 100 test", code: "7027583190" },
+      { id: "c8000_57", brand: "Cobas C 8000", type: "كيتات فحص", name: "HCYS Homocysteine 200 Test", code: "6542921190" },
+      { id: "c8000_58", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Tacrolimus", code: "72512554190" },
+      { id: "c8000_59", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Everolimus", code: "7027257190" },
+      { id: "c8000_60", brand: "Cobas C 8000", type: "كيتات فحص", name: "IL-6", code: "9015612190" },
+      { id: "c8000_61", brand: "Cobas C 8000", type: "كيتات فحص", name: "Elecsys Vit D Total Gen. III 300 Test", code: "9038086190" },
+      { id: "c8000_62", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "Diluent Universal", code: "7299001190" },
+      { id: "c8000_63", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "PreClean II M", code: "6908853190" },
+      { id: "c8000_64", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "Procell II M", code: "6908799190" },
+      { id: "c8000_65", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "ISE Reference Electrolyte 500 ml", code: "10820652216" },
+      { id: "c8000_66", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "NAOHD - C701", code: "5172128190" },
+      { id: "c8000_67", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "ECO - D Cobas C701/702", code: "5907543190" },
+      { id: "c8000_68", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "MULTI", code: "5353025190" },
+      { id: "c8000_69", brand: "Cobas C 8000", type: "محاليل ومستهلكات", name: "ASSAYTIP/ASSAYCUP TRAY", code: "5694302001" },
+      { id: "c8000_70", brand: "Cobas C 8000", type: "كيتات فحص", name: "TP2, 700T, COBAS C 701/702", code: "5171385190" },
+      { id: "c8000_71", brand: "Cobas C 8000", type: "كيتات فحص", name: "ALB2, 750T, COBAS C 701/702", code: "5166861190" },
+      { id: "c8000_72", brand: "Cobas C 8000", type: "كيتات فحص", name: "TRIGL Triglycerides", code: "5171407190" },
+      { id: "c8000_73", brand: "Cobas C 8000", type: "كيتات فحص", name: "HDLC4", code: "7528582190" },
+      { id: "c8000_74", brand: "Cobas C 8000", type: "كيتات فحص", name: "ALT", code: "5850797190" },
+      { id: "c8000_75", brand: "Cobas C 8000", type: "كيتات فحص", name: "AST", code: "5850819190" },
+      { id: "c8000_76", brand: "Cobas C 8000", type: "كيتات فحص", name: "CHOL2", code: "5168538190" },
+      { id: "c8000_77", brand: "Cobas C 8000", type: "كيتات فحص", name: "GLUC3", code: "5168791190" },
+      { id: "c8000_78", brand: "Cobas C 8000", type: "كيتات فحص", name: "LDLC3", code: "7005768190" },
+      { id: "c8000_79", brand: "Cobas C 8000", type: "كيتات فحص", name: "MG2", code: "6407358190" },
+      { id: "c8000_80", brand: "Cobas C 8000", type: "كيتات فحص", name: "CREAJ2, 1500T, COBAS C 701/702", code: "6407137190" },
+      { id: "c8000_81", brand: "Cobas C 8000", type: "كيتات فحص", name: "RF - II Cobas C701/702", code: "5480167190" },
+      { id: "c8000_82", brand: "Cobas C 8000", type: "كيتات فحص", name: "CRP4 500 TEST C701/702", code: "7876424190" },
+
+      // C 503 Green Pack - C 503 Green Pack
+      { id: "c503_1", brand: "C 503 Green Pack", type: "كيتات فحص", name: "Ca2 - Calcium Gen.2- Green Pack", code: "8057427190" },
+      { id: "c503_2", brand: "C 503 Green Pack", type: "كيتات فحص", name: "Ureal - Green Pack", code: "8058806190" },
+      { id: "c503_3", brand: "C 503 Green Pack", type: "كيتات فحص", name: "GLUC3 - Green Pack", code: "8057800190" },
+      { id: "c503_4", brand: "C 503 Green Pack", type: "كيتات فحص", name: "RF-II - Green Pack", code: "8058628190" },
+      { id: "c503_5", brand: "C 503 Green Pack", type: "كيتات فحص", name: "CRP4 - Green Pack", code: "8057591190" },
+      { id: "c503_6", brand: "C 503 Green Pack", type: "كيتات فحص", name: "HDLC4 - Green Pack", code: "8057877190" },
+      { id: "c503_7", brand: "C 503 Green Pack", type: "كيتات فحص", name: "A1CX4- Green Pack", code: "9529713190" },
+      { id: "c503_8", brand: "C 503 Green Pack", type: "كيتات فحص", name: "TRIGL - Green Pack", code: "8058687190" },
+      { id: "c503_9", brand: "C 503 Green Pack", type: "كيتات فحص", name: "GGT-2 - Green Pack", code: "8057796190" },
+
+      // Siemens - Siemens Stock
+      { id: "si_1", brand: "Siemens", type: "كيتات فحص", name: "INNOVANCE D DIMER", code: "OPB07" },
+      { id: "si_2", brand: "Siemens", type: "محاليل ومستهلكات", name: "Dade Owren's Veronal Buffer 10x15 mL", code: "B423425" },
+      { id: "si_3", brand: "Siemens", type: "محاليل ومستهلكات", name: "Calcium Chloride Solition 10x15 mL", code: "ORHO37" },
+      { id: "si_4", brand: "Siemens", type: "معايرات CalSet", name: "PT-Multi Calibratör 6x1 mL", code: "OPAT03" },
+      { id: "si_5", brand: "Siemens", type: "كيتات فحص", name: "Dade Thrombin Reagent 10x1 mL", code: "B423325" },
+
+      // Advia - Advia Stock
+      { id: "ad_1", brand: "Advia", type: "كيتات فحص", name: "Advia Centaur HCV-200 Test", code: "10309061" },
+      { id: "ad_2", brand: "Advia", type: "كيتات فحص", name: "Advia Centaur TNIH- 500 Test", code: "10994775" },
+      { id: "ad_3", brand: "Advia", type: "كيتات فحص", name: "Advia Centaur PCT - 100 Test", code: "11202697" },
+
+      // Sysmex - Sysmex Stock
+      { id: "sy_1", brand: "Sysmex", type: "محاليل ومستهلكات", name: "CLI Ca Clean I 1x50 mL", code: "96406313" },
+      { id: "sy_2", brand: "Sysmex", type: "محاليل ومستهلكات", name: "CA Clean II 1x500 mL", code: "96406136" },
+      { id: "sy_3", brand: "Sysmex", type: "محاليل ومستهلكات", name: "CellClean - 50 mL", code: "83401621" },
+      { id: "sy_4", brand: "Sysmex", type: "محاليل ومستهلكات", name: "WNR Fluorocell 82x2 mL", code: "CP066715" },
+      { id: "sy_5", brand: "Sysmex", type: "محاليل ومستهلكات", name: "WDF Fluorocell 42x2 mL", code: "CV377552" },
+      { id: "sy_6", brand: "Sysmex", type: "محاليل ومستهلكات", name: "CELLPACK DCL - XN 550", code: "CT661628" },
+      { id: "sy_7", brand: "Sysmex", type: "محاليل ومستهلكات", name: "LYSERCELL WDF - XN 550", code: "BG689680" },
+      { id: "sy_8", brand: "Sysmex", type: "محاليل ومستهلكات", name: "FLUOROCELL WDF - XN 550", code: "AA325279" },
+      { id: "sy_9", brand: "Sysmex", type: "محاليل ومستهلكات", name: "SULFOLYSER - XN 550", code: "90411317" },
+      { id: "sy_10", brand: "Sysmex", type: "كونترول Control", name: "XN-L Check L1 - XN 550", code: "213570" },
+      { id: "sy_11", brand: "Sysmex", type: "كونترول Control", name: "XN-L Check L2 - XN 550", code: "213571" }
+    ];
+
+    // =========================================================================
+    // EMBEDDED CONFIGURATION (PRE-LINKED TO YOUR GOOGLE DRIVE SCRIPT)
+    // =========================================================================
+    const EMBEDDED_CONFIG = {
+      GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyvSzmbKejhsZZagYRe1pW4btmkjZi3jVEVqzTMn8ciHRkWJiJc4ESMLvIGpar1BHb4/exec",
+      COMPANY_WHATSAPP: "",
+      TELEGRAM_BOT_TOKEN: "",
+      TELEGRAM_CHAT_ID: "",
+      ADMIN_PIN: "1234"
+    };
+
+    // =========================================================================
+    // STATE & STORAGE HELPERS
+    // =========================================================================
+    const STORAGE_KEYS = {
+      CATALOG: "lm_catalog_v5",
+      ORDERS: "lm_orders_v5",
+      CART: "lm_cart_v5",
+      SCRIPT_URL: "lm_script_url_v5",
+      PIN: "lm_admin_pin_v5",
+      WHATSAPP: "lm_company_wa_v5",
+      TG_TOKEN: "lm_tg_token_v5",
+      TG_CHAT: "lm_tg_chat_v5",
+      CUSTOMER_PROFILE: "lm_cust_profile_v5",
+      LANG: "lm_lang_v5"
+    };
+
+    let catalog = [];
+    let orders = [];
+    let cart = {};
+    let selectedBrand = "ALL";
+    let selectedType = "ALL";
+    let selectedOrderFilter = "ALL";
+    let adminUnlocked = false;
+    let pollTimer = null;
+    let knownOrderIds = new Set();
+    let currentLang = "ar";
+    let lastSubmittedOrder = null;
+
+    function getScriptUrl() {
+      return (localStorage.getItem(STORAGE_KEYS.SCRIPT_URL) || EMBEDDED_CONFIG.GOOGLE_SCRIPT_URL || "").trim();
+    }
+
+    function getAdminPin() {
+      return (localStorage.getItem(STORAGE_KEYS.PIN) || EMBEDDED_CONFIG.ADMIN_PIN || "1234").trim();
+    }
+
+    function getCompanyWhatsapp() {
+      return (localStorage.getItem(STORAGE_KEYS.WHATSAPP) || EMBEDDED_CONFIG.COMPANY_WHATSAPP || "").trim();
+    }
+
+    // =========================================================================
+    // CATALOG FILTERING & CART ACTIONS
+    // =========================================================================
+    function renderFilters() {
+      const brands = ["ALL", ...new Set(catalog.map(p => p.brand))];
+      const brandContainer = document.getElementById("brandChips");
+      if (brandContainer) {
+        brandContainer.innerHTML = brands.map(b => `
+          <button class="chip ${selectedBrand === b ? "active" : ""}" onclick="selectBrand('${escapeHtml(b)}')">
+            ${b === "ALL" ? (currentLang === "en" ? "All Systems" : "الكل") : escapeHtml(b)}
+          </button>
+        `).join("");
+      }
+
+      const types = ["ALL", "كيتات فحص", "معايرات CalSet", "كونترول Control", "محاليل ومستهلكات"];
+      const typeLabelsEn = {
+        "ALL": "All Types",
+        "كيتات فحص": "Test Kits",
+        "معايرات CalSet": "Calibrators",
+        "كونترول Control": "Controls",
+        "محاليل ومستهلكات": "Reagents & Consumables"
+      };
+      const typeContainer = document.getElementById("typeChips");
+      if (typeContainer) {
+        typeContainer.innerHTML = types.map(t => `
+          <button class="chip type-chip ${selectedType === t ? "active" : ""}" onclick="selectType('${escapeHtml(t)}')">
+            ${currentLang === "en" ? (typeLabelsEn[t] || t) : (t === "ALL" ? "جميع الأنواع" : t)}
+          </button>
+        `).join("");
+      }
+    }
+
+    function selectBrand(brand) {
+      selectedBrand = brand;
+      renderFilters();
+      renderCatalog();
+    }
+
+    function selectType(type) {
+      selectedType = type;
+      renderFilters();
+      renderCatalog();
+    }
+
+    function resetFilters() {
+      selectedBrand = "ALL";
+      selectedType = "ALL";
+      const sInput = document.getElementById("searchInput");
+      if (sInput) sInput.value = "";
+      renderFilters();
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const q = (document.getElementById("searchInput")?.value || "").trim().toLowerCase();
+      const filtered = catalog.filter(p => {
+        const matchBrand = selectedBrand === "ALL" || p.brand === selectedBrand;
+        const matchType = selectedType === "ALL" || p.type === selectedType;
+        const matchQ = !q ||
+          (p.name || "").toLowerCase().includes(q) ||
+          (p.code || "").toLowerCase().includes(q) ||
+          (p.brand || "").toLowerCase().includes(q);
+        return matchBrand && matchType && matchQ;
+      });
+
+      const countEl = document.getElementById("catalogCountText");
+      if (countEl) {
+        countEl.textContent = currentLang === "en"
+          ? `Showing ${filtered.length} of ${catalog.length} items`
+          : `عرض ${filtered.length} من أصل ${catalog.length} صنف متوفر`;
+      }
+
+      const grid = document.getElementById("productsGrid");
+      if (!grid) return;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1; background:#fff; padding:32px; border-radius:14px; text-align:center; border:1px solid var(--border); color:var(--muted);">
+            ${currentLang === "en" ? "No matching items found. You can add a custom item using the button above." : "لا توجد أصناف مطابقة لبحثك. يمكنك طلب مادة غير موجودة عبر الزر في الأعلى."}
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const qty = cart[p.id] ? cart[p.id].qty : 0;
+        return `
+          <div class="product-card ${qty > 0 ? "in-cart" : ""}">
+            <div>
+              <div class="badges-row">
+                <span class="badge-brand">${escapeHtml(p.brand)}</span>
+                <span class="badge-type">${escapeHtml(p.type)}</span>
+              </div>
+              <div class="product-name">${escapeHtml(p.name)}</div>
+              <div class="product-code">REF: ${escapeHtml(p.code)}</div>
+            </div>
+            <div class="qty-controls">
+              <span style="font-size:0.8rem; font-weight:700; color:var(--muted);">
+                ${currentLang === "en" ? "Qty:" : "الكمية:"}
+              </span>
+              <div class="stepper">
+                <button class="step-btn" onclick="updateCartItem('${escapeHtml(p.id)}', -1)">−</button>
+                <input type="number" class="qty-input" min="0" value="${qty}" onchange="setCartItemQty('${escapeHtml(p.id)}', this.value)" />
+                <button class="step-btn" onclick="updateCartItem('${escapeHtml(p.id)}', 1)">+</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function updateCartItem(prodId, delta) {
+      const prod = catalog.find(p => p.id === prodId);
+      if (!prod) return;
+      const currentQty = cart[prodId] ? cart[prodId].qty : 0;
+      const nextQty = Math.max(0, currentQty + delta);
+      if (nextQty === 0) {
+        delete cart[prodId];
+      } else {
+        cart[prodId] = { ...prod, qty: nextQty };
+      }
+      localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+      renderCatalog();
+      updateFloatingCart();
+    }
+
+    function setCartItemQty(prodId, val) {
+      const num = Math.max(0, parseInt(val, 10) || 0);
+      const prod = catalog.find(p => p.id === prodId);
+      if (!prod) return;
+      if (num === 0) {
+        delete cart[prodId];
+      } else {
+        cart[prodId] = { ...prod, qty: num };
+      }
+      localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+      renderCatalog();
+      updateFloatingCart();
+    }
+
+    function addCustomItemToCart() {
+      const name = document.getElementById("customItemName").value.trim();
+      const brand = document.getElementById("customItemBrand").value.trim() || "طلب خاص";
+      const qty = Math.max(1, parseInt(document.getElementById("customItemQty").value, 10) || 1);
+
+      if (!name) {
+        showToast(currentLang === "en" ? "⚠️ Please enter item name" : "⚠️ يرجى إدخال اسم المادة المطلوبة");
+        return;
+      }
+
+      const customId = "custom_" + Date.now();
+      cart[customId] = {
+        id: customId,
+        brand,
+        type: "طلب خاص",
+        name,
+        code: "CUSTOM",
+        qty
+      };
+      localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+      document.getElementById("customItemName").value = "";
+      document.getElementById("customItemQty").value = "1";
+      closeModal("customItemModal");
+      updateFloatingCart();
+      showToast(currentLang === "en" ? "✅ Added to your order cart" : "✅ تمت إضافة المادة الخاصة إلى السلة");
+    }
+
+    function updateFloatingCart() {
+      const entries = Object.values(cart);
+      const totalQty = entries.reduce((sum, item) => sum + item.qty, 0);
+      const badgeEl = document.getElementById("cartTotalQty");
+      const titleEl = document.getElementById("cartSummaryTitle");
+      const subEl = document.getElementById("cartSummarySub");
+
+      if (badgeEl) badgeEl.textContent = totalQty;
+      if (totalQty === 0) {
+        if (titleEl) titleEl.textContent = currentLang === "en" ? "Your order cart is empty" : "سلة الطلبات فارغة";
+        if (subEl) subEl.textContent = currentLang === "en" ? "Select reagents & kits to place your order" : "اختر الكيتات والمشغلات المطلوبة لإرسال طلبيتك";
+      } else {
+        if (titleEl) titleEl.textContent = currentLang === "en" ? `${entries.length} item(s) selected (${totalQty} packs)` : `تم اختيار ${entries.length} صنف (${totalQty} عبوة)`;
+        if (subEl) subEl.textContent = currentLang === "en" ? "Click Review & Send to complete your order" : "اضغط مراجعة وإرسال لإتمام طلبيتك";
+      }
+    }
+
+    function openCheckoutModal() {
+      const entries = Object.values(cart);
+      if (entries.length === 0) {
+        showToast(currentLang === "en" ? "⚠️ Please select at least one item first" : "⚠️ السلة فارغة! اختر صنفاً واحداً على الأقل أولاً");
+        return;
+      }
+
+      const listEl = document.getElementById("checkoutItemsList");
+      listEl.innerHTML = entries.map(item => `
+        <div class="cart-item-row">
+          <div>
+            <div style="font-weight:800; font-size:0.9rem;">[${escapeHtml(item.brand)}] ${escapeHtml(item.name)}</div>
+            <div style="font-size:0.76rem; color:var(--muted);">REF: ${escapeHtml(item.code)}</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-weight:900; color:var(--primary); font-size:0.95rem;">× ${item.qty}</span>
+            <button class="btn btn-danger btn-sm" onclick="removeCheckoutItem('${escapeHtml(item.id)}')">✕</button>
+          </div>
+        </div>
+      `).join("");
+
+      try {
+        const savedProfile = JSON.parse(localStorage.getItem(STORAGE_KEYS.CUSTOMER_PROFILE) || "null");
+        if (savedProfile) {
+          if (!document.getElementById("custName").value) document.getElementById("custName").value = savedProfile.name || "";
+          if (!document.getElementById("custPhone").value) document.getElementById("custPhone").value = savedProfile.phone || "";
+          if (!document.getElementById("custArea").value) document.getElementById("custArea").value = savedProfile.area || "";
+        }
+      } catch (e) {}
+
+      openModal("checkoutModal");
+    }
+
+    function removeCheckoutItem(itemId) {
+      delete cart[itemId];
+      localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(cart));
+      renderCatalog();
+      updateFloatingCart();
+      if (Object.keys(cart).length === 0) {
+        closeModal("checkoutModal");
+      } else {
+        openCheckoutModal();
+      }
+    }
+
+    async function postToGoogleScript(url, payload) {
+      try {
+        await fetch(url, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+        return true;
+      } catch (err) {
+        console.warn("Google Script POST error:", err);
+        return false;
+      }
+    }
+
+    async function submitOrder() {
+      const entries = Object.values(cart);
+      if (entries.length === 0) {
+        showToast(currentLang === "en" ? "⚠️ Cart is empty" : "⚠️ سلة الطلبات فارغة");
+        return;
+      }
+
+      const customerName = document.getElementById("custName").value.trim();
+      const customerPhone = document.getElementById("custPhone").value.trim();
+      const area = document.getElementById("custArea").value.trim();
+      const priority = document.getElementById("custPriority").value;
+      const notes = document.getElementById("custNotes").value.trim() || "-";
+
+      if (!customerName || !customerPhone || !area) {
+        showToast(currentLang === "en" ? "⚠️ Please fill in Lab Name, Phone, and Area" : "⚠️ يرجى تعبئة اسم المخبر ورقم الهاتف والمنطقة");
+        return;
+      }
+
+      localStorage.setItem(STORAGE_KEYS.CUSTOMER_PROFILE, JSON.stringify({
+        name: customerName,
+        phone: customerPhone,
+        area
+      }));
+
+      const orderId = "LM-" + Math.floor(1000 + Math.random() * 9000);
+      const now = new Date();
+      const createdAt = now.toLocaleString("en-GB", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+      const totalQty = entries.reduce((sum, i) => sum + i.qty, 0);
+      const itemsText = entries
+        .map(i => `[${i.brand}] ${i.name} (${i.code}) × ${i.qty}`)
+        .join(" | ");
+
+      const orderPayload = {
+        action: "create",
+        orderId,
+        createdAt,
+        customerName,
+        customerPhone,
+        area,
+        priority,
+        status: "طلب جديد",
+        totalQty,
+        itemsText,
+        notes
+      };
+
+      lastSubmittedOrder = orderPayload;
+
+      const btn = document.getElementById("submitOrderBtn");
+      btn.disabled = true;
+      btn.textContent = currentLang === "en" ? "⏳ Sending order..." : "⏳ جاري إرسال الطلب للشركة...";
+
+      orders.unshift(orderPayload);
+      knownOrderIds.add(orderId);
+      localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(orders));
+
+      const scriptUrl = getScriptUrl();
+      if (scriptUrl) {
+        await postToGoogleScript(scriptUrl, orderPayload);
+      }
+
+      await sendTelegramAlert(orderPayload);
+
+      cart = {};
+      localStorage.setItem(STORAGE_KEYS.CART, "{}");
+      renderCatalog();
+      updateFloatingCart();
+
+      btn.disabled = false;
+      btn.textContent = currentLang === "en" ? "✅ Confirm & Send Order Now" : "✅ تأكيد وإرسال الطلب الآن";
+      closeModal("checkoutModal");
+
+      document.getElementById("successOrderId").textContent = orderId;
+      const waNum = getCompanyWhatsapp();
+      const waWrap = document.getElementById("successWhatsAppWrap");
+      if (waNum) {
+        const msg = encodeURIComponent(
+          `مرحباً شركة ليمون ميديكال (LIMON KIMYA) 🍋\nتم تسجيل طلب جديد برقم: *${orderId}*\n• المخبر/الزبون: ${customerName}\n• الهاتف: ${customerPhone}\n• المنطقة: ${area}\n• الأولوية: ${priority}\n• المواد:\n${entries.map(i => `- [${i.brand}] ${i.name} × ${i.qty}`).join("\n")}`
+        );
+        document.getElementById("successWhatsAppLink").href = `https://wa.me/${waNum.replace(/\D/g, "")}?text=${msg}`;
+        waWrap.classList.remove("hidden");
+      } else {
+        waWrap.classList.add("hidden");
+      }
+
+      openModal("orderSuccessModal");
+    }
+
+    function printLastCustomerOrderPDF() {
+      if (!lastSubmittedOrder) return;
+      generateOrderPDFWindow(lastSubmittedOrder);
+    }
+
+    async function sendTelegramAlert(order) {
+      const token = (localStorage.getItem(STORAGE_KEYS.TG_TOKEN) || EMBEDDED_CONFIG.TELEGRAM_BOT_TOKEN || "").trim();
+      const chatId = (localStorage.getItem(STORAGE_KEYS.TG_CHAT) || EMBEDDED_CONFIG.TELEGRAM_CHAT_ID || "").trim();
+      if (!token || !chatId) return;
+
+      const text = `🍋 *طلب جديد — شركة ليمون ميديكال (LIMON KIMYA)*\n` +
+        `🔖 رقم الطلب: *${order.orderId}*\n` +
+        `🏥 المخبر/الزبون: ${order.customerName}\n` +
+        `📞 الهاتف: ${order.customerPhone}\n` +
+        `📍 المنطقة: ${order.area}\n` +
+        `⚡ الأولوية: ${order.priority}\n` +
+        `📦 المواد (${order.totalQty} عبوة):\n${order.itemsText}`;
+
+      try {
+        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text, parse_mode: "Markdown" })
+        });
+      } catch (e) {
+        console.warn("Telegram alert failed:", e);
+      }
+    }
+
+    // =========================================================================
+    // GOOGLE APPS SCRIPT TEMPLATE (2-WAY SYNC + JSONP FALLBACK + DELETE SUPPORT)
+    // =========================================================================
+    const APPS_SCRIPT_CODE = `function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var raw = (e && e.postData && e.postData.contents) ? e.postData.contents : "{}";
+  var data = JSON.parse(raw);
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(['رقم الطلب', 'التاريخ والوقت', 'اسم المخبر / الزبون', 'رقم الهاتف', 'المنطقة', 'الأولوية', 'الحالة', 'إجمالي العبوات', 'المواد المطلوبة', 'ملاحظات']);
+  }
+
+  if (data.action === 'updateStatus') {
+    var rows = sheet.getDataRange().getValues();
+    for (var i = 1; i < rows.length; i++) {
+      if (String(rows[i][0]).trim() === String(data.orderId).trim()) {
+        sheet.getRange(i + 1, 7).setValue(data.status);
+        return ContentService.createTextOutput(JSON.stringify({ ok: true, updated: true }))
+          .setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+    return ContentService.createTextOutput(JSON.stringify({ ok: false, error: 'Order not found' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  if (data.action === 'deleteOrder') {
+    var rowsDel = sheet.getDataRange().getValues();
+    for (var j = 1; j < rowsDel.length; j++) {
+      if (String(rowsDel[j][0]).trim() === String(data.orderId).trim()) {
+        sheet.deleteRow(j + 1);
+        return ContentService.createTextOutput(JSON.stringify({ ok: true, deleted: true }))
+          .setMimeType(ContentService.MimeType.JSON);
+      }
+    }
+    return ContentService.createTextOutput(JSON.stringify({ ok: false, error: 'Order not found' }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
+  sheet.appendRow([
+    data.orderId,
+    data.createdAt,
+    data.customerName,
+    "'" + data.customerPhone,
+    data.area,
+    data.priority,
+    data.status || 'طلب جديد',
+    data.totalQty,
+    data.itemsText,
+    data.notes || '-'
+  ]);
+
+  return ContentService.createTextOutput(JSON.stringify({ ok: true, orderId: data.orderId }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function doGet(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var rows = sheet.getDataRange().getValues();
+  var result = [];
+
+  for (var i = 1; i < rows.length; i++) {
+    if (!rows[i][0]) continue;
+    result.push({
+      orderId: String(rows[i][0]),
+      createdAt: String(rows[i][1]),
+      customerName: String(rows[i][2]),
+      customerPhone: String(rows[i][3]).replace(/^'/, ''),
+      area: String(rows[i][4]),
+      priority: String(rows[i][5]),
+      status: String(rows[i][6]),
+      totalQty: Number(rows[i][7]) || 0,
+      itemsText: String(rows[i][8]),
+      notes: String(rows[i][9] || '-')
+    });
+  }
+
+  var payload = JSON.stringify({ ok: true, orders: result.reverse() });
+  var callback = e && e.parameter && e.parameter.callback;
+  if (callback) {
+    return ContentService.createTextOutput(callback + '(' + payload + ')')
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return ContentService.createTextOutput(payload)
+    .setMimeType(ContentService.MimeType.JSON);
+}`;
+
+    // =========================================================================
+    // INITIALIZATION, LANGUAGE & ROUTING
+    // =========================================================================
+    function updateConnectionBadge() {
+      const url = getScriptUrl();
+      const dot = document.getElementById("connDot");
+      const text = document.getElementById("connText");
+      const warn = document.getElementById("adminUnlinkedWarning");
+
+      if (url && url.startsWith("https://script.google.com/")) {
+        if (dot) dot.className = "dot online";
+        if (text) text.textContent = currentLang === "en" ? "Connected Live 🟢" : "متصل مباشرة بالشركة 🟢";
+        if (warn) warn.classList.add("hidden");
+      } else {
+        if (dot) dot.className = "dot offline";
+        if (text) text.textContent = currentLang === "en" ? "Local Mode 🟡" : "وضع محلي 🟡";
+        if (warn) warn.classList.remove("hidden");
+      }
+    }
+
+    function applyLanguage(lang) {
+      currentLang = lang === "en" ? "en" : "ar";
+      localStorage.setItem(STORAGE_KEYS.LANG, currentLang);
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === "en" ? "ltr" : "rtl";
+
+      const isEn = currentLang === "en";
+      const setTxt = (id, ar, en) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = isEn ? en : ar;
+      };
+
+      setTxt("brandMainTitle", "شركة ليمون ميديكال", "Limon Medical");
+      setTxt("portalSubtitle", "بوابة طلبات المشغلات والكيتات المخبرية للزبائن والمخابر", "Laboratory Reagents & Kits Ordering Portal");
+      setTxt("langToggleBtn", "🌐 English", "🌐 العربية");
+      setTxt("backToCustomerBtn", "🛒 واجهة الزبائن", "🛒 Customer View");
+      setTxt("customItemBtn", "➕ طلب مادة غير موجودة بالقائمة", "➕ Request Unlisted Item");
+      setTxt("brandFilterLabel", "تصفية حسب الجهاز / الشركة المصنعة:", "Filter by Analyzer / Manufacturer:");
+      setTxt("typeFilterLabel", "تصفية حسب نوع المادة:", "Filter by Item Type:");
+      setTxt("resetFiltersBtn", "إعادة ضبط الفلاتر", "Reset Filters");
+      setTxt("reviewOrderBtn", "مراجعة وإرسال الطلب ⬅️", "Review & Send Order ➡️");
+      setTxt("checkoutTitle", "🛒 مراجعة وإرسال طلبية المواد", "🛒 Review & Submit Order");
+      setTxt("lblCustName", "اسم المخبر أو الزبون *", "Lab / Customer Name *");
+      setTxt("lblCustPhone", "رقم الهاتف (واتساب) *", "Phone Number (WhatsApp) *");
+      setTxt("lblCustArea", "المنطقة / العنوان *", "City / Area *");
+      setTxt("lblCustPriority", "درجة الاستعجال", "Priority Level");
+      setTxt("lblCustNotes", "ملاحظات إضافية (اختياري)", "Additional Notes (Optional)");
+      setTxt("submitOrderBtn", "✅ تأكيد وإرسال الطلب الآن", "✅ Confirm & Send Order Now");
+      setTxt("successModalTitle", "تم إرسال طلبيتك بنجاح!", "Order Submitted Successfully!");
+      setTxt("successModalDesc", "وصلت طلبيتك مباشرة إلى نظام شركة ليمون ميديكال وسيتم تجهيزها في أقرب وقت.", "Your order has been sent directly to Limon Medical and will be processed shortly.");
+      setTxt("successRefLabel", "رقم الطلب المرجعي:", "Order Reference ID:");
+
+      const searchEl = document.getElementById("searchInput");
+      if (searchEl) {
+        searchEl.placeholder = isEn
+          ? "Search by test name (e.g. AFP, TSH, Vitamin D, Glucose) or REF code..."
+          : "ابحث باسم التحليل أو الكيت (مثل: AFP, TSH, Vitamin D, Glucose) أو رقم الكود...";
+      }
+
+      updateConnectionBadge();
+      renderFilters();
+      renderCatalog();
+      updateFloatingCart();
+    }
+
+    function toggleLanguage() {
+      applyLanguage(currentLang === "ar" ? "en" : "ar");
+    }
+
+    function switchToAdmin() {
+      document.getElementById("customerView").classList.add("hidden");
+      document.getElementById("adminView").classList.remove("hidden");
+      document.getElementById("backToCustomerBtn").classList.remove("hidden");
+      if (window.location.hash !== "#admin") {
+        history.replaceState(null, "", "#admin");
+      }
+      if (adminUnlocked) {
+        document.getElementById("adminLockScreen").classList.add("hidden");
+        document.getElementById("adminDashboard").classList.remove("hidden");
+      } else {
+        document.getElementById("adminLockScreen").classList.remove("hidden");
+        document.getElementById("adminDashboard").classList.add("hidden");
+      }
+    }
+
+    function switchToCustomer() {
+      document.getElementById("adminView").classList.add("hidden");
+      document.getElementById("customerView").classList.remove("hidden");
+      document.getElementById("backToCustomerBtn").classList.add("hidden");
+      if (window.location.hash === "#admin") {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    }
+
+    function populateShareLinks() {
+      const baseUrl = window.location.href.split("#")[0].split("?")[0];
+      const custField = document.getElementById("customerLinkField");
+      const adminField = document.getElementById("adminLinkField");
+      if (custField) custField.value = baseUrl;
+      if (adminField) adminField.value = baseUrl + "#admin";
+    }
+
+    function copyToClipboardSafe(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, 99999);
+      try {
+        document.execCommand("copy");
+      } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    function copyTextField(inputId, successMsg) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      copyToClipboardSafe(input.value);
+      showToast("✅ " + successMsg);
+    }
+
+    function copyEnglishLink() {
+      const baseUrl = window.location.href.split("#")[0].split("?")[0];
+      const enUrl = baseUrl + "?lang=en";
+      copyToClipboardSafe(enUrl);
+      showToast("✅ تم نسخ رابط الزبائن باللغة الإنجليزية (English)!");
+    }
+
+    function unlockAdmin() {
+      const entered = (document.getElementById("adminPinInput").value || "").trim();
+      const expected = getAdminPin();
+      if (entered === expected) {
+        adminUnlocked = true;
+        document.getElementById("adminLockScreen").classList.add("hidden");
+        document.getElementById("adminDashboard").classList.remove("hidden");
+        populateShareLinks();
+        populateSettingsInputs();
+        updateConnectionBadge();
+        renderAdminOrders();
+        syncOrdersFromCloud(true);
+        if (pollTimer) clearInterval(pollTimer);
+        pollTimer = setInterval(() => {
+          if (adminUnlocked) syncOrdersFromCloud(false);
+        }, 8000);
+        showToast("✅ أهلاً بك في لوحة إدارة شركة ليمون ميديكال");
+      } else {
+        showToast("❌ رمز المرور غير صحيح!");
+      }
+    }
+
+    function lockAdmin() {
+      adminUnlocked = false;
+      if (pollTimer) clearInterval(pollTimer);
+      document.getElementById("adminPinInput").value = "";
+      document.getElementById("adminDashboard").classList.add("hidden");
+      document.getElementById("adminLockScreen").classList.remove("hidden");
+      showToast("🔒 تم قفل لوحة الإدارة");
+    }
+
+    function fetchCloudOrdersViaJsonp(url) {
+      return new Promise((resolve) => {
+        const cbName = "__lmJsonpCb_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+        const script = document.createElement("script");
+        let settled = false;
+
+        const cleanup = () => {
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        };
+
+        const timer = setTimeout(() => {
+          if (!settled) {
+            settled = true;
+            cleanup();
+            resolve(null);
+          }
+        }, 7000);
+
+        window[cbName] = (data) => {
+          if (!settled) {
+            settled = true;
+            clearTimeout(timer);
+            cleanup();
+            resolve(data);
+          }
+        };
+
+        script.onerror = () => {
+          if (!settled) {
+            settled = true;
+            clearTimeout(timer);
+            cleanup();
+            resolve(null);
+          }
+        };
+
+        const sep = url.includes("?") ? "&" : "?";
+        script.src = `${url}${sep}callback=${cbName}&t=${Date.now()}`;
+        document.body.appendChild(script);
+      });
+    }
+
+    async function syncOrdersFromCloud(manual = false) {
+      const url = getScriptUrl();
+      if (!url) {
+        if (manual) showToast("⚠️ يرجى ربط رابط Google Drive أولاً");
+        return false;
+      }
+
+      let json = null;
+
+      try {
+        const fetchUrl = url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
+        const res = await fetch(fetchUrl, {
+          method: "GET",
+          redirect: "follow",
+          cache: "no-store"
+        });
+        const rawText = await res.text();
+        json = JSON.parse(rawText);
+      } catch (err) {
+        // Fallback to JSONP when sandboxed iframe / blob origin blocks redirect CORS
+        json = await fetchCloudOrdersViaJsonp(url);
+      }
+
+      if (json && json.ok && Array.isArray(json.orders)) {
+        let newestOrder = null;
+        json.orders.forEach(o => {
+          if (!knownOrderIds.has(o.orderId)) {
+            knownOrderIds.add(o.orderId);
+            newestOrder = o;
+          }
+        });
+
+        orders = json.orders;
+        localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(orders));
+        renderAdminOrders();
+
+        const nowTime = new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+        const syncLabel = document.getElementById("lastSyncText");
+        if (syncLabel) {
+          syncLabel.textContent = `🟢 متصل بالسحابة بنجاح — آخر تحديث تلقائي: ${nowTime}`;
+        }
+
+        if (newestOrder) {
+          playChime();
+          showIncomingOrderBanner(newestOrder);
+          triggerDesktopNotification(
+            `طلب جديد (${newestOrder.orderId}) — ليمون ميديكال`,
+            `المخبر: ${newestOrder.customerName} | المنطقة: ${newestOrder.area}`
+          );
+        } else if (manual) {
+          showToast(`✅ تم الاتصال وتحديث الطلبات بنجاح (${orders.length} طلب)`);
+        }
+        return true;
+      }
+
+      if (manual) {
+        showToast("⚠️ تعذر قراءة البيانات — تأكد داخل Google Apps Script من النشر بصلاحية (Anyone) وتحديث كود doGet");
+      }
+      return false;
+    }
+
+    function showIncomingOrderBanner(order) {
+      const banner = document.getElementById("incomingAlert");
+      document.getElementById("incomingAlertTitle").textContent = `🔔 وصل طلب جديد برقم ${order.orderId}!`;
+      document.getElementById("incomingAlertBody").textContent = `${order.customerName} (${order.area}) — ${order.totalQty} عبوة`;
+      banner.classList.add("show");
+      setTimeout(() => banner.classList.remove("show"), 9000);
+    }
+
+    function dismissIncomingAlert() {
+      document.getElementById("incomingAlert").classList.remove("show");
+    }
+
+    function setOrderFilter(filter, btnEl) {
+      selectedOrderFilter = filter;
+      document.querySelectorAll("#orderStatusFilters .chip").forEach(c => c.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      renderAdminOrders();
+    }
+
+    function renderAdminOrders() {
+      document.getElementById("statTotal").textContent = orders.length;
+      document.getElementById("statNew").textContent = orders.filter(o => o.status === "طلب جديد").length;
+      document.getElementById("statPrep").textContent = orders.filter(o => o.status === "قيد التجهيز").length;
+      document.getElementById("statDone").textContent = orders.filter(o => (o.status || "").includes("تمت")).length;
+      document.getElementById("statUrgent").textContent = orders.filter(o => (o.priority || "").includes("مستعجل")).length;
+
+      const q = (document.getElementById("adminOrderSearch").value || "").trim().toLowerCase();
+      const filtered = orders.filter(o => {
+        const matchFilter =
+          selectedOrderFilter === "ALL" ||
+          (selectedOrderFilter === "URGENT" && (o.priority || "").includes("مستعجل")) ||
+          o.status === selectedOrderFilter;
+
+        const matchQ = !q ||
+          (o.orderId || "").toLowerCase().includes(q) ||
+          (o.customerName || "").toLowerCase().includes(q) ||
+          (o.customerPhone || "").toLowerCase().includes(q) ||
+          (o.area || "").toLowerCase().includes(q);
+
+        return matchFilter && matchQ;
+      });
+
+      const listEl = document.getElementById("adminOrdersList");
+      if (filtered.length === 0) {
+        listEl.innerHTML = `
+          <div style="background:#fff; padding:32px; border-radius:14px; text-align:center; border:1px solid var(--border); color:var(--muted);">
+            لا توجد طلبات في هذا القسم حالياً.
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(o => {
+        const isUrgent = (o.priority || "").includes("مستعجل");
+        const isDone = (o.status || "").includes("تمت");
+        const isPrep = o.status === "قيد التجهيز";
+        const statusClass = isDone ? "status-done" : (isPrep ? "status-prep" : "status-new");
+        const pillClass = isDone ? "pill-done" : (isPrep ? "pill-prep" : "pill-new");
+
+        const itemsFormatted = (o.itemsText || "")
+          .split("|")
+          .map(s => s.trim())
+          .filter(Boolean)
+          .map(line => `<div style="padding:3px 0; border-bottom:1px dashed #e2e8f0;">• ${escapeHtml(line)}</div>`)
+          .join("");
+
+        return `
+          <div class="order-card ${statusClass} ${isUrgent ? "urgent" : ""}">
+            <div class="order-header">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                  <span style="font-weight:900; font-size:1.08rem; color:var(--primary);">${escapeHtml(o.orderId)}</span>
+                  <span class="pill ${pillClass}">${escapeHtml(o.status)}</span>
+                  ${isUrgent ? `<span class="pill pill-urgent">🔴 مستعجل</span>` : ""}
+                </div>
+                <div style="font-weight:800; font-size:1rem; margin-top:4px;">
+                  🏥 ${escapeHtml(o.customerName)} — <span style="color:var(--muted); font-weight:700;">📍 ${escapeHtml(o.area)}</span>
+                </div>
+                <div style="font-size:0.84rem; color:var(--muted);">
+                  📞 ${escapeHtml(o.customerPhone)} &nbsp;|&nbsp; 🕒 ${escapeHtml(o.createdAt)} &nbsp;|&nbsp; 📦 الإجمالي: <strong>${o.totalQty}</strong> عبوة
+                </div>
+              </div>
+            </div>
+
+            <div class="order-items-box">${itemsFormatted}</div>
+
+            ${o.notes && o.notes !== "-" ? `<div style="font-size:0.84rem; color:#854d0e; background:#fefce8; padding:6px 10px; border-radius:8px; margin-bottom:8px;">📝 ملاحظات: ${escapeHtml(o.notes)}</div>` : ""}
+
+            <div class="order-actions">
+              <button class="btn btn-warning btn-sm" onclick="changeOrderStatus('${escapeHtml(o.orderId)}', 'قيد التجهيز')">
+                ⏳ قيد التجهيز
+              </button>
+              <button class="btn btn-success btn-sm" onclick="changeOrderStatus('${escapeHtml(o.orderId)}', 'تمت المهمة ✅')">
+                ✅ تمت المهمة (تم التوصيل)
+              </button>
+              <button class="btn btn-outline btn-sm" onclick="printReceipt('${escapeHtml(o.orderId)}')">
+                📄 إيصال PDF
+              </button>
+              <button class="btn btn-outline btn-sm" onclick="whatsappCustomer('${escapeHtml(o.orderId)}')">
+                💬 واتساب الزبون
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="deleteOrder('${escapeHtml(o.orderId)}')">
+                🗑️ حذف
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    async function changeOrderStatus(orderId, newStatus) {
+      const idx = orders.findIndex(o => o.orderId === orderId);
+      if (idx !== -1) {
+        orders[idx].status = newStatus;
+        localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(orders));
+        renderAdminOrders();
+      }
+
+      const url = getScriptUrl();
+      if (url) {
+        const ok = await postToGoogleScript(url, { action: "updateStatus", orderId, status: newStatus });
+        if (ok) {
+          showToast(`✅ تم تحديث حالة الطلب ${orderId} إلى "${newStatus}"`);
+        } else {
+          showToast("⚠️ تم التحديث محلياً، تأكد من اتصال الإنترنت للمزامنة");
+        }
+      } else {
+        showToast(`✅ تم تحديث الحالة إلى "${newStatus}"`);
+      }
+    }
+
+    async function deleteOrder(orderId) {
+      if (!confirm(`هل أنت متأكد من حذف الطلب ${orderId} نهائياً؟`)) return;
+      orders = orders.filter(o => o.orderId !== orderId);
+      knownOrderIds.delete(orderId);
+      localStorage.setItem(STORAGE_KEYS.ORDERS, JSON.stringify(orders));
+      renderAdminOrders();
+
+      const url = getScriptUrl();
+      if (url) {
+        const ok = await postToGoogleScript(url, { action: "deleteOrder", orderId });
+        if (ok) {
+          showToast(`🗑️ تم حذف الطلب ${orderId} من اللوحة ومن Google Drive`);
+        } else {
+          showToast("⚠️ تم الحذف من اللوحة المحلية");
+        }
+      } else {
+        showToast(`🗑️ تم حذف الطلب ${orderId}`);
+      }
+    }
+
+    function whatsappCustomer(orderId) {
+      const order = orders.find(o => o.orderId === orderId);
+      if (!order) return;
+      let cleanPhone = (order.customerPhone || "").replace(/\D/g, "");
+      if (cleanPhone.startsWith("05")) cleanPhone = "90" + cleanPhone;
+      else if (cleanPhone.startsWith("09")) cleanPhone = "963" + cleanPhone.slice(1);
+      const msg = encodeURIComponent(
+        `مرحباً ${order.customerName}،\nمعكم *شركة ليمون ميديكال (LIMON KIMYA)* 🍋.\nبخصوص طلبيتكم رقم *${order.orderId}*:\nحالة الطلب الآن: *${order.status}*.\nشكراً لتعاملكم معنا.`
+      );
+      window.open(`https://wa.me/${cleanPhone}?text=${msg}`, "_blank");
+    }
+
+    function printReceipt(orderId) {
+      const order = orders.find(o => o.orderId === orderId);
+      if (!order) return;
+      generateOrderPDFWindow(order);
+    }
+
+    function generateOrderPDFWindow(order) {
+      const itemsRows = (order.itemsText || "")
+        .split("|")
+        .map((line, i) => `<tr><td style="border:1px solid #cbd5e1; padding:8px; text-align:center;">${i + 1}</td><td style="border:1px solid #cbd5e1; padding:8px;">${escapeHtml(line.trim())}</td></tr>`)
+        .join("");
+
+      const win = window.open("", "_blank", "width=780,height=840");
+      win.document.write(`
+        <html lang="ar" dir="rtl">
+        <head>
+          <meta charset="UTF-8" />
+          <title>طلبية مواد مخبرية - ${order.orderId}</title>
+          <style>
+            body { font-family: Tahoma, Arial, sans-serif; padding: 24px; color: #0f172a; }
+            .box { border: 2px solid #0f766e; border-radius: 14px; padding: 22px; }
+            .head { display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0f766e; padding-bottom:12px; margin-bottom:16px; }
+            table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+            th { background: #0f766e; color: #fff; padding: 9px; border: 1px solid #0f766e; text-align: right; }
+          </style>
+        </head>
+        <body>
+          <div class="box">
+            <div class="head">
+              <div>
+                <h2 style="margin:0 0 4px 0; color:#0f766e;">🍋 شركة ليمون ميديكال</h2>
+                <div style="font-size:12px; font-weight:bold; color:#15803d;">LIMON KIMYA VE ORGANIZASYON TIC. LTD. STI.</div>
+                <p style="margin:4px 0 0 0; color:#475569; font-size:13px;">إيصال طلب وتجهيز مشغلات وكيتات مخبرية</p>
+              </div>
+              <div style="text-align:left; font-size:13px;">
+                <div><strong>رقم الطلب:</strong> ${escapeHtml(order.orderId)}</div>
+                <div><strong>التاريخ:</strong> ${escapeHtml(order.createdAt)}</div>
+              </div>
+            </div>
+            <p><strong>المخبر / الزبون:</strong> ${escapeHtml(order.customerName)} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>الهاتف:</strong> ${escapeHtml(order.customerPhone)}</p>
+            <p><strong>المنطقة:</strong> ${escapeHtml(order.area)} &nbsp;&nbsp;|&nbsp;&nbsp; <strong>الأولوية:</strong> ${escapeHtml(order.priority)}</p>
+            <table>
+              <thead><tr><th style="width:50px; text-align:center;">#</th><th>المادة المطلوبة والعدد</th></tr></thead>
+              <tbody>${itemsRows}</tbody>
+            </table>
+            <p><strong>إجمالي العبوات:</strong> ${order.totalQty}</p>
+            <p><strong>ملاحظات:</strong> ${escapeHtml(order.notes || "-")}</p>
+            <div style="display:flex; justify-content:space-between; margin-top:45px; padding-top:16px; border-top:1px dashed #94a3b8; font-size:13px;">
+              <div>توقيع أمين المستودع: ....................</div>
+              <div>توقيع مندوب التوصيل: ....................</div>
+              <div>توقيع وختم المستلم: ....................</div>
+            </div>
+          </div>
+          <script>window.onload = function(){ window.print(); };<\/script>
+        </body>
+        </html>
+      `);
+      win.document.close();
+    }
+
+    function exportOrdersCSV() {
+      const headers = ["رقم الطلب", "التاريخ والوقت", "اسم المخبر / الزبون", "رقم الهاتف", "المنطقة", "الأولوية", "الحالة", "إجمالي العبوات", "المواد المطلوبة", "ملاحظات"];
+      const rows = orders.map(o => [
+        o.orderId, o.createdAt, o.customerName, o.customerPhone, o.area, o.priority, o.status, o.totalQty, o.itemsText, o.notes
+      ].map(v => `"${String(v || "").replace(/"/g, '""')}"`).join(","));
+      const csv = "\uFEFF" + [headers.join(","), ...rows].join("\n");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `Limon-Kimya-Orders-${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+    }
+
+    // =========================================================================
+    // SETTINGS, PASSWORD CHANGE & SELF-CONTAINED NETLIFY HTML GENERATOR
+    // =========================================================================
+    function openSettingsModal() {
+      populateSettingsInputs();
+      openModal("notificationsModal");
+    }
+
+    function populateSettingsInputs() {
+      document.getElementById("scriptUrlInput").value = getScriptUrl();
+      document.getElementById("cfgWhatsapp").value = getCompanyWhatsapp();
+      document.getElementById("cfgAdminPin").value = getAdminPin();
+      document.getElementById("cfgAdminPinConfirm").value = getAdminPin();
+      document.getElementById("cfgTgToken").value = localStorage.getItem(STORAGE_KEYS.TG_TOKEN) || EMBEDDED_CONFIG.TELEGRAM_BOT_TOKEN || "";
+      document.getElementById("cfgTgChatId").value = localStorage.getItem(STORAGE_KEYS.TG_CHAT) || EMBEDDED_CONFIG.TELEGRAM_CHAT_ID || "";
+    }
+
+    function copyAppsScriptCode() {
+      copyToClipboardSafe(APPS_SCRIPT_CODE);
+      showToast("✅ تم نسخ كود Google Apps Script");
+    }
+
+    async function saveAndTestScriptUrl() {
+      const url = document.getElementById("scriptUrlInput").value.trim();
+      if (!url || !url.startsWith("https://script.google.com/")) {
+        showToast("⚠️ يرجى لصق رابط صحيح يبدأ بـ https://script.google.com/");
+        return;
+      }
+      localStorage.setItem(STORAGE_KEYS.SCRIPT_URL, url);
+      EMBEDDED_CONFIG.GOOGLE_SCRIPT_URL = url;
+      updateConnectionBadge();
+      showToast("⏳ جاري اختبار الاتصال بملف Google Sheets...");
+      await syncOrdersFromCloud(true);
+    }
+
+    function saveNotificationSettings() {
+      const newPin = document.getElementById("cfgAdminPin").value.trim();
+      const confirmPin = document.getElementById("cfgAdminPinConfirm").value.trim();
+
+      if (!newPin || newPin.length < 4) {
+        showToast("⚠️ يجب أن تتكون كلمة السر من 4 أرقام أو أحرف على الأقل");
+        return;
+      }
+      if (newPin !== confirmPin) {
+        showToast("❌ كلمتا السر غير متطابقتين! يرجى التأكد");
+        return;
+      }
+
+      localStorage.setItem(STORAGE_KEYS.PIN, newPin);
+      EMBEDDED_CONFIG.ADMIN_PIN = newPin;
+      localStorage.setItem(STORAGE_KEYS.WHATSAPP, document.getElementById("cfgWhatsapp").value.trim());
+      localStorage.setItem(STORAGE_KEYS.TG_TOKEN, document.getElementById("cfgTgToken").value.trim());
+      localStorage.setItem(STORAGE_KEYS.TG_CHAT, document.getElementById("cfgTgChatId").value.trim());
+
+      closeModal("notificationsModal");
+      showToast("✅ تم تغيير كلمة السر وحفظ الإعدادات بنجاح!");
+    }
+
+    function addNewCatalogProduct() {
+      const name = document.getElementById("newProdName").value.trim();
+      const code = document.getElementById("newProdCode").value.trim();
+      const brand = document.getElementById("newProdBrand").value;
+      const type = document.getElementById("newProdType").value;
+
+      if (!name || !code) {
+        showToast("⚠️ يرجى إدخال اسم الصنف ورقم الكود");
+        return;
+      }
+
+      catalog.unshift({
+        id: "prod_" + Date.now(),
+        brand,
+        type,
+        name,
+        code
+      });
+      localStorage.setItem(STORAGE_KEYS.CATALOG, JSON.stringify(catalog));
+      document.getElementById("newProdName").value = "";
+      document.getElementById("newProdCode").value = "";
+      closeModal("addProductModal");
+      renderFilters();
+      renderCatalog();
+      showToast("✅ تمت إضافة الصنف للكتالوج");
+    }
+
+    function downloadConfiguredHtml() {
+      const scriptUrl = document.getElementById("scriptUrlInput").value.trim() || getScriptUrl();
+      if (!scriptUrl) {
+        showToast("⚠️ يرجى لصق رابط Google Apps Script في الخانة (1) وحفظه أولاً!");
+        return;
+      }
+
+      const finalConfig = {
+        GOOGLE_SCRIPT_URL: scriptUrl,
+        COMPANY_WHATSAPP: getCompanyWhatsapp(),
+        TELEGRAM_BOT_TOKEN: (localStorage.getItem(STORAGE_KEYS.TG_TOKEN) || EMBEDDED_CONFIG.TELEGRAM_BOT_TOKEN || "").trim(),
+        TELEGRAM_CHAT_ID: (localStorage.getItem(STORAGE_KEYS.TG_CHAT) || EMBEDDED_CONFIG.TELEGRAM_CHAT_ID || "").trim(),
+        ADMIN_PIN: getAdminPin()
+      };
+
+      let docHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+      docHtml = docHtml.replace(
+        /const EMBEDDED_CONFIG = \{[\s\S]*?\};/,
+        "const EMBEDDED_CONFIG = " + JSON.stringify(finalConfig, null, 6) + ";"
+      );
+
+      docHtml = docHtml.replace(
+        /const DEFAULT_CATALOG = \[[\s\S]*?\];/,
+        "const DEFAULT_CATALOG = " + JSON.stringify(catalog, null, 6) + ";"
+      );
+
+      const parser = new DOMParser();
+      const parsedDoc = parser.parseFromString(docHtml, "text/html");
+      parsedDoc.getElementById("customerView")?.classList.remove("hidden");
+      parsedDoc.getElementById("adminView")?.classList.add("hidden");
+      parsedDoc.getElementById("backToCustomerBtn")?.classList.add("hidden");
+      parsedDoc.getElementById("adminLockScreen")?.classList.remove("hidden");
+      parsedDoc.getElementById("adminDashboard")?.classList.add("hidden");
+      const pinEl = parsedDoc.getElementById("adminPinInput");
+      if (pinEl) pinEl.value = "";
+      const ordersEl = parsedDoc.getElementById("adminOrdersList");
+      if (ordersEl) ordersEl.innerHTML = "";
+      parsedDoc.querySelectorAll(".modal-backdrop.open").forEach(m => m.classList.remove("open"));
+      docHtml = "<!DOCTYPE html>\n" + parsedDoc.documentElement.outerHTML;
+
+      const blob = new Blob([docHtml], { type: "text/html;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "index.html";
+      a.click();
+
+      showToast("🎉 تم تحميل ملف index.html المربوط! ضعه في مجلد وارفعه على Netlify");
+    }
+
+    // =========================================================================
+    // AUDIO CHIME, BROWSER NOTIFICATIONS & MODAL UTILS
+    // =========================================================================
+    function playChime() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const now = ctx.currentTime;
+        [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, now + i * 0.12);
+          gain.gain.setValueAtTime(0.22, now + i * 0.12);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.12 + 0.38);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + i * 0.12);
+          osc.stop(now + i * 0.12 + 0.4);
+        });
+      } catch (e) {}
+    }
+
+    function requestBrowserNotifications() {
+      if (!("Notification" in window)) {
+        showToast("⚠️ متصفحك لا يدعم إشعارات سطح المكتب");
+        return;
+      }
+      Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+          showToast("🔔 تم تفعيل إشعارات المتصفح بنجاح!");
+          playChime();
+        } else {
+          showToast("⚠️ تم رفض إذن الإشعارات من المتصفح");
+        }
+      });
+    }
+
+    function triggerDesktopNotification(title, body) {
+      if ("Notification" in window && Notification.permission === "granted") {
+        new Notification(title, { body });
+      }
+    }
+
+    function openModal(id) {
+      if (id === "googleSyncModal" || id === "notificationsModal") {
+        populateSettingsInputs();
+      }
+      document.getElementById(id).classList.add("open");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("open");
+    }
+
+    let toastTimeout = null;
+    function showToast(msg) {
+      const el = document.getElementById("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => el.classList.remove("show"), 3800);
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      try {
+        const savedCat = JSON.parse(localStorage.getItem(STORAGE_KEYS.CATALOG) || "null");
+        catalog = Array.isArray(savedCat) && savedCat.length > 0 ? savedCat : [...DEFAULT_CATALOG];
+      } catch (e) {
+        catalog = [...DEFAULT_CATALOG];
+      }
+
+      try {
+        const savedOrders = JSON.parse(localStorage.getItem(STORAGE_KEYS.ORDERS) || "[]");
+        orders = Array.isArray(savedOrders) ? savedOrders : [];
+        orders.forEach(o => knownOrderIds.add(o.orderId));
+      } catch (e) {
+        orders = [];
+      }
+
+      try {
+        const savedCart = JSON.parse(localStorage.getItem(STORAGE_KEYS.CART) || "{}");
+        cart = savedCart && typeof savedCart === "object" ? savedCart : {};
+      } catch (e) {
+        cart = {};
+      }
+
+      const codeBox = document.getElementById("appsScriptCodeBox");
+      if (codeBox) codeBox.textContent = APPS_SCRIPT_CODE;
+
+      let logoClicks = 0;
+      let logoClickTimer = null;
+      const brandTrigger = document.getElementById("brandLogoTrigger");
+      if (brandTrigger) {
+        brandTrigger.addEventListener("click", () => {
+          logoClicks++;
+          clearTimeout(logoClickTimer);
+          logoClickTimer = setTimeout(() => { logoClicks = 0; }, 1200);
+          if (logoClicks >= 4) {
+            logoClicks = 0;
+            switchToAdmin();
+          }
+        });
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialLang = urlParams.get("lang") || localStorage.getItem(STORAGE_KEYS.LANG) || "ar";
+      applyLanguage(initialLang);
+
+      if (window.location.hash === "#admin") {
+        switchToAdmin();
+      }
+    });
+
+    window.addEventListener("hashchange", () => {
+      if (window.location.hash === "#admin") {
+        switchToAdmin();
+      } else {
+        switchToCustomer();
+      }
+    });
+  </script>
+</body>
+</html>
